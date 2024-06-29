@@ -1,4 +1,5 @@
 [user]
 	name = Hanna Eckert
 	email = eckerthanna@icloud.com
+[core]
 	editor = /snap/bin/nvim
