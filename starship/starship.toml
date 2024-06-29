@@ -1,0 +1,13 @@
+format = """$directory$character"""
+right_format = """$all"""
+
+add_newline = false
+
+[hostname]
+disabled = true
+
+[username]
+disabled = true
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
