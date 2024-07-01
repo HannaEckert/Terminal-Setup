@@ -26,10 +26,13 @@ sudo apt install \
 	bat \ # Nicer looking cat
 	fd-find \ 
 	zsh-autosuggestions \ 
-	thefuck \ # Typo fixer
-	fzf # Fuzzy find
-
+	thefuck # Typo fixer
+	
 # Zoxide
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 exit 0
