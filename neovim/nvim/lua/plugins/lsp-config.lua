@@ -13,7 +13,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls", "tsserver", "html", "bashls",
-					"cssls", "jsonls", "remark_ls", "pyre"
+					"cssls", "jsonls", "remark_ls"
 				},
 				automatic_installation = true
 			})
@@ -31,7 +31,6 @@ return {
 			lspconfig.cssls.setup({})
 			lspconfig.jsonls.setup({})
 			lspconfig.remark_ls.setup({})
-			lspconfig.pyre.setup({})
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
