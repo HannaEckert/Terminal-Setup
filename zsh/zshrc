@@ -2,6 +2,9 @@ clear
 
 PATH="$PATH:$HOME/.local/bin"
 
+setopt append_history # append rather then overwrite
+setopt inc_append_history # add history immediately after typing a command
+
 # Aliases
 alias ls="eza --tree --icons --level 1"
 alias cat="batcat"
