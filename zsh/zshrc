@@ -56,3 +56,7 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(thefuck --alias)"
 eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
