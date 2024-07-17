@@ -2,13 +2,19 @@ clear
 
 PATH="$PATH:$HOME/.local/bin"
 
-setopt append_history # append rather then overwrite
-setopt inc_append_history # add history immediately after typing a command
+# Make history longer and persistent
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt SHARE_HISTORY
 
 # Aliases
 alias ls="eza --tree --icons --level 1"
 alias cat="batcat"
 alias fd="fdfind"
+
+# Set the shell to vim mode
+bindkey -v
 
 # fzf color scheme - catppuccin frappe
 export FZF_DEFAULT_OPTS=" \
@@ -57,6 +63,7 @@ eval "$(thefuck --alias)"
 eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh)"
+# If not iside tmux, reconnect to the last tmux session or open a new one
+if [ -z $TMUX ] ; then 
+	tmux a 2>/dev/null || tmux
+fi
