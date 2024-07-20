@@ -1,0 +1,162 @@
+{
+	// Workbench
+	"workbench.startupEditor": "none",
+	"workbench.colorTheme": "Catppuccin Frappé",
+	"workbench.iconTheme": "catppuccin-frappe",
+	"workbench.activityBar.location": "top",
+	"workbench.tree.renderIndentGuides": "none",
+	"git.openRepositoryInParentFolders": "never",
+	"security.workspace.trust.untrustedFiles": "open",
+	"security.workspace.trust.emptyWindow": true,
+	"diffEditor.useInlineViewWhenSpaceIsLimited": true,
+
+	// Editor
+	"editor.folding": true,
+	"editor.guides.indentation": false,
+	"editor.scrollbar.verticalScrollbarSize": 10,
+	"editor.minimap.enabled": false,
+	"editor.smoothScrolling": true,
+	"editor.scrollBeyondLastLine": true,
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.renderWhitespace": "none",
+	"editor.cursorBlinking": "solid",
+	"editor.lineNumbers": "relative",
+	"editor.cursorSurroundingLines": 10,
+
+	// Disable annoying messages
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"workbench.tips.enabled": false,
+
+	// File formatting
+	"files.defaultLanguage": "markdown",
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"files.autoSave": "afterDelay",
+	"editor.linkedEditing": true,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.useTabStops": true,
+	"breadcrumbs.enabled": false,
+
+	// Terminal
+	"terminal.integrated.cursorStyle": "line",
+
+	// Font Settings
+	"editor.fontLigatures": true,
+	"editor.lineHeight": 1.65,
+	"debug.console.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"chat.editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"scm.inputFontFamily": "JetBrainsMono Nerd Font Mono",
+	"notebook.output.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"markdown.preview.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"editor.inlayHints.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"editor.codeLensFontFamily": "JetBrainsMono Nerd Font Mono",
+	"editor.inlineSuggest.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"editor.experimentalInlineEdit.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"scm.inputFontSize": 14,
+	"debug.console.fontSize": 14,
+	"chat.editor.fontSize": 14,
+	"markdown.preview.fontSize": 14,
+	"notebook.markup.fontSize": 14,
+	"notebook.output.fontSize": 14,
+	"editor.fontSize": 14,
+	"editor.suggestFontSize": 14,
+	"editor.codeLensFontSize": 14,
+	"editor.inlayHints.fontSize": 14,
+	"terminal.integrated.fontSize": 14,
+	"terminal.integrated.fontWeightBold": "normal",
+	"terminal.integrated.letterSpacing": 1,
+	"terminal.integrated.lineHeight": 1.05,
+
+	// Extensions
+	"remote.autoForwardPortsSource": "output",
+	"extensions.ignoreRecommendations": true,
+	"[markdown]": {
+		"editor.wordWrap": "wordWrapColumn",
+		"editor.wordWrapColumn": 100
+	},
+
+	// JavaScript
+	"javascript.updateImportsOnFileMove.enabled": "always",
+
+	// Vim Emulation
+	"vim.useSystemClipboard": false,
+	"vim.leader": "<space>",
+	"vim.hlsearch": true,
+	"vim.mouseSelectionGoesIntoVisualMode": false,
+	"vim.smartRelativeLine": true,
+	"vim.normalModeKeyBindings": [
+		// Switch between tabs
+		{ "before": [ "<S-h>" ], "commands": [ ":bprevious" ], "silent": true },
+		{ "before": [ "<S-k>" ], "commands": [ ":bprevious" ], "silent": true },
+		{ "before": [ "<S-l>" ], "commands": [ ":bnext" ], "silent": true },
+		{ "before": [ "<S-j>" ], "commands": [ ":bnext" ], "silent": true },
+
+		// Pane splitting
+		{ "before": [ "<leader>", "v" ], "commands": [ ":vsplit" ], "silent": true },
+		{ "before": [ "<leader>", "s" ], "commands": [ ":split" ], "silent": true },
+
+		// Switch between panes
+		{ "before": [ "leader", "h" ], "commands": [ "workbench.action.focusLeftGroup" ], "silent": true },
+		{ "before": [ "leader", "j" ], "commands": [ "workbench.action.focusBelowGroup" ], "silent": true },
+		{ "before": [ "leader", "k" ], "commands": [ "workbench.action.focusAboveGroup" ], "silent": true },
+		{ "before": [ "leader", "l" ], "commands": [ "workbench.action.focusRightGroup" ], "silent": true },
+
+		{ "before": [ "leader", "<S-h>" ], "commands": [ "workbench.action.moveEditorToLeftGroup" ], "silent": true },
+		{ "before": [ "leader", "<S-j>" ], "commands": [ "workbench.action.moveEditorToBelowGroup" ], "silent": true },
+		{ "before": [ "leader", "<S-k>" ], "commands": [ "workbench.action.moveEditorToAboveGroup" ], "silent": true },
+		{ "before": [ "leader", "<S-l>" ], "commands": [ "workbench.action.moveEditorToRightGroup" ], "silent": true },
+
+		{ "before": [ "leader", "f", "f" ], "commands": [ "editor.unfoldAll" ], "silent": true },
+		{ "before": [ "leader", "f", "s" ], "commands": [ "editor.toggleFold" ], "silent": true },
+		{ "before": [ "leader", "f", "1" ], "commands": [ "editor.foldLevel1" ], "silent": true },
+		{ "before": [ "leader", "f", "2" ], "commands": [ "editor.foldLevel2" ], "silent": true },
+		{ "before": [ "leader", "f", "3" ], "commands": [ "editor.foldLevel3" ], "silent": true },
+		{ "before": [ "leader", "f", "4" ], "commands": [ "editor.foldLevel4" ], "silent": true },
+		{ "before": [ "leader", "f", "5" ], "commands": [ "editor.foldLevel5" ], "silent": true },
+		{ "before": [ "leader", "f", "6" ], "commands": [ "editor.foldLevel6" ], "silent": true },
+		{ "before": [ "leader", "f", "7" ], "commands": [ "editor.foldLevel7" ], "silent": true },
+
+		// Some ease of use shortcuts
+		{ "before": [ "<leader>", "c" ], "commands": [ "editor.action.commentLine" ], "silent": true }
+		{ "before": [ "<leader>", "<space>" ], "commands": [ "editor.action.triggerSuggest" ], "silent": true }
+	],
+	"vim.visualModeKeyBindings": [
+		{ "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
+		{ "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
+		{ "before": [ "<leader>", "c" ], "commands": [ "editor.action.commentLine" ], "silent": true }
+	]
+	"vim.statusBarColorControl": true,
+	// Catppucccin Frappé Status Bar Colors     background  |  foreground
+	"vim.statusBarColors.normal": [ "#303446", "#babbf1" ], // Lavender
+	"vim.statusBarColors.insert": [ "#303446", "#a6d189" ], // Green
+	"vim.statusBarColors.surroundinputmode": [ "#303446", "#a6d189" ],
+	"vim.statusBarColors.visual": [ "#303446", "#eebebe" ], // Flamingo
+	"vim.statusBarColors.visualline": [ "#303446", "#eebebe" ],
+	"vim.statusBarColors.visualblock": [ "#303446", "#eebebe" ],
+	"vim.statusBarColors.replace": [ "#303446", "#ea999c" ], // Maroon
+	"vim.statusBarColors.searchinprogressmode": [ "#303446", "#ea999c" ],
+	"vim.statusBarColors.commandlineinprogress": [ "#303446", "#ef9f76" ], // Peach
+	"vim.searchHighlightColor": "#eebebe44", // Yellow
+	"vim.searchHighlightTextColor": "#e5c890",
+	"vim.searchMatchColor": "#eebebe44",
+	"vim.searchMatchTextColor": "#e5c890",
+	"vim.substitutionColor": "#a6d18944", // Green
+	"vim.substitutionTextColor": "#a6d189",
+	"vim.foldfix": true,
+	"workbench.colorCustomizations": { // Those overwrites come from the vim extension
+		"statusBar.background": "#303446",
+		"statusBar.noFolderBackground": "#303446",
+		"statusBar.debuggingBackground": "#303446",
+		"statusBar.foreground": "#babbf1",
+		"statusBar.debuggingForeground": "#babbf1",
+		"editor.foldBackground": "#0000"
+	}
+	// Improve extension performance
+	"extensions.experimental.affinity": {
+		"vscodevim.vim": 1
+	}
+}

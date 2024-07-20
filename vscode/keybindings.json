@@ -1,0 +1,217 @@
+[
+	// Expand / Contract the current view
+	{
+		"key": "shift+space z",
+		"command": "workbench.action.minimizeOtherEditors"
+	},
+	{
+		"key": "shift+space shift+z",
+		"command": "workbench.action.evenEditorWidths"
+	},
+
+	// Panel Handling
+	{ // Side bar
+		"key": "shift+space s",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	{ // Panel (Terminal)
+		"key": "shift+space t",
+		"command": "workbench.action.togglePanel"
+	},
+	{ // Git (Source Control)
+		"key": "shift+space g",
+		"command": "workbench.view.scm",
+		"when": "workbench.scm.active"
+	},
+	{ // File Explorer
+		"key": "shift+space f",
+		"command": "workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+
+	// File Handling (Within Explorer)
+	{ // New File
+		"key": "shift+space n",
+		"command": "explorer.newFile"
+	},
+	{ // New Folder
+		"key": "shift+space shift+n",
+		"command": "explorer.newFolder"
+	},
+	{ // Delete
+		"key": "shift+space d",
+		"command": "deleteFile",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus"
+	},
+	{ // Copy
+		"key": "shift+space c",
+		"command": "filesExplorer.copy",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+	},
+	{ // Cut
+		"key": "shift+space x",
+		"command": "filesExplorer.cut",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	{ // Paste
+		"key": "shift+space p",
+		"command": "filesExplorer.paste",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+	},
+
+	// The Action Bar
+	{ // Open File
+		"key": "shift+space p",
+		"command": "workbench.action.quickOpen"
+	},
+	{ // Execute Command
+		"key": "shift+space shift+p",
+		"command": "workbench.action.showCommands"
+	},
+
+	// Navigation in Quick Open and Suggest
+	{
+		"key": "ctrl+j",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "shift+space j",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "shift+space k",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.quickOpenSelectNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "shift+space j",
+		"command": "workbench.action.quickOpenSelectNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.quickOpenSelectPrevious",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "shift+space k",
+		"command": "workbench.action.quickOpenSelectPrevious",
+		"when": "inQuickOpen"
+	},
+
+	// Open Thngs "to the side"
+	{
+		"key": "shift+enter",
+		"command": "search.action.openInEditor",
+		"when": "hasSearchResult && searchViewletFocus"
+	},
+	{
+		"key": "shift+enter",
+		"command": "editor.action.revealDefinitionAside",
+		"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+	},
+	{
+		"key": "shift+enter",
+		"command": "debug.openBreakpointToSide",
+		"when": "breakpointsFocused"
+	},
+	{
+		"key": "shift+enter",
+		"command": "debug.openBreakpointToSide",
+		"when": "breakpointsFocused"
+	},
+	{
+		"key": "shift+enter",
+		"command": "openReferenceToSide",
+		"when": "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand && !treestickyScrollFocused"
+	},
+	{
+		"key": "shift+enter",
+		"command": "problems.action.openToSide",
+		"when": "problemFocus"
+	},
+	{
+		"key": "shift+enter",
+		"command": "search.action.openResultToSide",
+		"when": "fileMatchOrMatchFocus && searchViewletVisible"
+	},
+	{
+		"key": "shift+enter",
+		"command": "explorer.openToSide",
+		"when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+	},
+
+	{ // Toggle Breakpoints
+		"key": "shift+space b",
+		"command": "editor.debug.action.toggleBreakpoint",
+		"when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
+	},
+
+	// Git Handling
+	{
+		"key": "shift+enter",
+		"command": "previewSelectedCodeAction",
+		"when": "codeActionMenuVisible"
+	},
+	{
+		"key": "shift+enter",
+		"command": "scm.acceptInput",
+		"when": "scmRepository"
+	},
+	{
+		"key": "shift+enter",
+		"command": "git.stage"
+	},
+	{
+		"key": "shift+backspace",
+		"command": "git.unstage"
+	},
+	{
+		"key": "shift+space backspace",
+		"command": "workbench.action.closeQuickOpen",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "shift+space shift+enter",
+		"command": "diffEditor.switchSide"
+	},
+
+	// Hop Through Changes
+	{
+		"key": "shift+space n",
+		"command": "workbench.action.editor.nextChange",
+		"when": "editorTextFocus && !textCompareEditorActive"
+	},
+	{
+		"key": "shift+space b",
+		"command": "workbench.action.editor.previousChange",
+		"when": "editorTextFocus && !textCompareEditorActive"
+	},
+	{
+		"key": "shift+space n",
+		"command": "workbench.action.compareEditor.nextChange",
+		"when": "textCompareEditorVisible"
+	},
+	{
+		"key": "shift+space b",
+		"command": "workbench.action.compareEditor.previousChange",
+		"when": "textCompareEditorVisible"
+	},
+
+	{ // Close all Editor Groups
+		"key": "shift+space q",
+		"command": "workbench.action.closeAllGroups"
+	}
+]
