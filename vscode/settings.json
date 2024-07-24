@@ -9,6 +9,7 @@
 	"security.workspace.trust.untrustedFiles": "open",
 	"security.workspace.trust.emptyWindow": true,
 	"diffEditor.useInlineViewWhenSpaceIsLimited": true,
+	"window.menuBarVisibility": "compact",
 
 	// Editor
 	"editor.folding": true,
@@ -21,7 +22,7 @@
 	"editor.renderWhitespace": "none",
 	"editor.cursorBlinking": "solid",
 	"editor.lineNumbers": "relative",
-	"editor.cursorSurroundingLines": 10,
+	"editor.cursorSurroundingLines": 15,
 
 	// Disable annoying messages
 	"explorer.confirmDelete": false,
@@ -86,18 +87,24 @@
 	"vim.useSystemClipboard": false,
 	"vim.leader": "<space>",
 	"vim.hlsearch": true,
+	"vim.incsearch": true,
+	"vim.ignorecase": true,
+	"vim.smartcase": false,
 	"vim.mouseSelectionGoesIntoVisualMode": false,
 	"vim.smartRelativeLine": true,
 	"vim.normalModeKeyBindings": [
 		// Switch between tabs
-		{ "before": [ "<S-h>" ], "commands": [ ":bprevious" ], "silent": true },
-		{ "before": [ "<S-k>" ], "commands": [ ":bprevious" ], "silent": true },
-		{ "before": [ "<S-l>" ], "commands": [ ":bnext" ], "silent": true },
-		{ "before": [ "<S-j>" ], "commands": [ ":bnext" ], "silent": true },
+		{ "before": [ "<leader>", "t" ], "commands": [ ":bnext" ], "silent": true },
+		{ "before": [ "<leader>", "<S-t>" ], "commands": [ ":bprevious" ], "silent": true },
 
 		// Pane splitting
 		{ "before": [ "<leader>", "v" ], "commands": [ ":vsplit" ], "silent": true },
 		{ "before": [ "<leader>", "s" ], "commands": [ ":split" ], "silent": true },
+
+		// Navigate Problems
+		{ "before": [ "<leader>", "." ], "commands": [ "editor.action.marker.next" ], "silent": true },
+		{ "before": [ "<leader>", "," ], "commands": [ "editor.action.marker.prev" ], "silent": true },
+		{ "before": [ "<leader>", "-" ], "commands": [ "editor.action.quickFix" ], "silent": true },
 
 		// Switch between panes
 		{ "before": [ "leader", "h" ], "commands": [ "workbench.action.focusLeftGroup" ], "silent": true },
@@ -121,14 +128,19 @@
 		{ "before": [ "leader", "f", "7" ], "commands": [ "editor.foldLevel7" ], "silent": true },
 
 		// Some ease of use shortcuts
-		{ "before": [ "<leader>", "c" ], "commands": [ "editor.action.commentLine" ], "silent": true }
+		{ "before": [ "<leader>", "w" ], "commands": [ ":w" ], "silent": true },
+		{ "before": [ "<leader>", "q" ], "commands": [ ":q" ], "silent": true },
+		{ "before": [ "<leader>", "c" ], "commands": [ "editor.action.commentLine" ], "silent": true },
 		{ "before": [ "<leader>", "<space>" ], "commands": [ "editor.action.triggerSuggest" ], "silent": true }
 	],
 	"vim.visualModeKeyBindings": [
 		{ "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
 		{ "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
 		{ "before": [ "<leader>", "c" ], "commands": [ "editor.action.commentLine" ], "silent": true }
-	]
+	],
+	"vim.insertModeKeyBindings": [
+		{ "before": ["j", "j"], "after": ["<esc>"] }
+	],
 	"vim.statusBarColorControl": true,
 	// Catppucccin Frappé Status Bar Colors     background  |  foreground
 	"vim.statusBarColors.normal": [ "#303446", "#babbf1" ], // Lavender
@@ -147,16 +159,108 @@
 	"vim.substitutionColor": "#a6d18944", // Green
 	"vim.substitutionTextColor": "#a6d189",
 	"vim.foldfix": true,
-	"workbench.colorCustomizations": { // Those overwrites come from the vim extension
+	"workbench.colorCustomizations": {
 		"statusBar.background": "#303446",
 		"statusBar.noFolderBackground": "#303446",
 		"statusBar.debuggingBackground": "#303446",
 		"statusBar.foreground": "#babbf1",
 		"statusBar.debuggingForeground": "#babbf1",
 		"editor.foldBackground": "#0000"
-	}
+	},
+
 	// Improve extension performance
 	"extensions.experimental.affinity": {
 		"vscodevim.vim": 1
-	}
+	},
+	"files.associations": {
+		".cflintrc": "json"
+	},
+	"editor.inlineSuggest.suppressSuggestions": true,
+	"auto-close-tag.excludedTags": [
+		"area",
+		"base",
+		"br",
+		"col",
+		"command",
+		"embed",
+		"hr",
+		"img",
+		"input",
+		"keygen",
+		"link",
+		"meta",
+		"param",
+		"source",
+		"track",
+		"wbr",
+		"cfabort",
+		"cfapplication",
+		"cfargument",
+		"cfassociate",
+		"cfbreak",
+		"cfchartdata",
+		"cfcollection",
+		"cfcontent",
+		"cfcontinue",
+		"cfcookie",
+		"cfdirectory",
+		"cfdump",
+		"cfelse",
+		"cfelseif",
+		"cferror",
+		"cfexecute",
+		"cfexit",
+		"cffile",
+		"cfflush",
+		"cfheader",
+		"cfhttpparam",
+		"cfimage",
+		"cfimport",
+		"cfinclude",
+		"cfindex",
+		"cfinput",
+		"cfinvokeargument",
+		"cflocation",
+		"cflog",
+		"cfloginuser",
+		"cflogout",
+		"cfmailparam",
+		"cfobject",
+		"cfobjectcache",
+		"cfparam",
+		"cfpop",
+		"cfprocessingdirective",
+		"cfprocparam",
+		"cfprocresult",
+		"cfproperty",
+		"cfqueryparam",
+		"cfregistry",
+		"cfreportparam",
+		"cfrethrow",
+		"cfreturn",
+		"cfschedule",
+		"cfspreadsheet",
+		"cfsearch",
+		"cfset",
+		"cfsetting",
+		"cfthrow",
+		"cfwddx"
+	],
+	"mssql.connections": [
+		{
+			"server": "localhost",
+			"database": "ventari",
+			"authenticationType": "SqlLogin",
+			"user": "sa",
+			"password": "",
+			"emptyPasswordInput": false,
+			"savePassword": true,
+			"profileName": "localhost",
+			"encrypt": "Mandatory",
+			"trustServerCertificate": true,
+			"connectTimeout": 15,
+			"commandTimeout": 30,
+			"applicationName": "vscode-mssql"
+		}
+	]
 }
