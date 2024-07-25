@@ -1,8 +1,6 @@
 {
 	// Workbench
 	"workbench.startupEditor": "none",
-	"workbench.colorTheme": "Catppuccin Frappé",
-	"workbench.iconTheme": "catppuccin-frappe",
 	"workbench.activityBar.location": "top",
 	"workbench.tree.renderIndentGuides": "none",
 	"git.openRepositoryInParentFolders": "never",
@@ -23,6 +21,7 @@
 	"editor.cursorBlinking": "solid",
 	"editor.lineNumbers": "relative",
 	"editor.cursorSurroundingLines": 15,
+	"breadcrumbs.enabled": false,
 
 	// Disable annoying messages
 	"explorer.confirmDelete": false,
@@ -38,7 +37,6 @@
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"editor.useTabStops": true,
-	"breadcrumbs.enabled": false,
 
 	// Terminal
 	"terminal.integrated.cursorStyle": "line",
@@ -83,94 +81,18 @@
 	// JavaScript
 	"javascript.updateImportsOnFileMove.enabled": "always",
 
-	// Vim Emulation
-	"vim.useSystemClipboard": false,
-	"vim.leader": "<space>",
-	"vim.hlsearch": true,
-	"vim.incsearch": true,
-	"vim.ignorecase": true,
-	"vim.smartcase": false,
-	"vim.mouseSelectionGoesIntoVisualMode": false,
-	"vim.smartRelativeLine": true,
-	"vim.normalModeKeyBindings": [
-		// Switch between tabs
-		{ "before": [ "<leader>", "t" ], "commands": [ ":bnext" ], "silent": true },
-		{ "before": [ "<leader>", "<S-t>" ], "commands": [ ":bprevious" ], "silent": true },
-
-		// Pane splitting
-		{ "before": [ "<leader>", "v" ], "commands": [ ":vsplit" ], "silent": true },
-		{ "before": [ "<leader>", "s" ], "commands": [ ":split" ], "silent": true },
-
-		// Navigate Problems
-		{ "before": [ "<leader>", "." ], "commands": [ "editor.action.marker.next" ], "silent": true },
-		{ "before": [ "<leader>", "," ], "commands": [ "editor.action.marker.prev" ], "silent": true },
-		{ "before": [ "<leader>", "-" ], "commands": [ "editor.action.quickFix" ], "silent": true },
-
-		// Switch between panes
-		{ "before": [ "leader", "h" ], "commands": [ "workbench.action.focusLeftGroup" ], "silent": true },
-		{ "before": [ "leader", "j" ], "commands": [ "workbench.action.focusBelowGroup" ], "silent": true },
-		{ "before": [ "leader", "k" ], "commands": [ "workbench.action.focusAboveGroup" ], "silent": true },
-		{ "before": [ "leader", "l" ], "commands": [ "workbench.action.focusRightGroup" ], "silent": true },
-
-		{ "before": [ "leader", "<S-h>" ], "commands": [ "workbench.action.moveEditorToLeftGroup" ], "silent": true },
-		{ "before": [ "leader", "<S-j>" ], "commands": [ "workbench.action.moveEditorToBelowGroup" ], "silent": true },
-		{ "before": [ "leader", "<S-k>" ], "commands": [ "workbench.action.moveEditorToAboveGroup" ], "silent": true },
-		{ "before": [ "leader", "<S-l>" ], "commands": [ "workbench.action.moveEditorToRightGroup" ], "silent": true },
-
-		{ "before": [ "leader", "f", "f" ], "commands": [ "editor.unfoldAll" ], "silent": true },
-		{ "before": [ "leader", "f", "s" ], "commands": [ "editor.toggleFold" ], "silent": true },
-		{ "before": [ "leader", "f", "1" ], "commands": [ "editor.foldLevel1" ], "silent": true },
-		{ "before": [ "leader", "f", "2" ], "commands": [ "editor.foldLevel2" ], "silent": true },
-		{ "before": [ "leader", "f", "3" ], "commands": [ "editor.foldLevel3" ], "silent": true },
-		{ "before": [ "leader", "f", "4" ], "commands": [ "editor.foldLevel4" ], "silent": true },
-		{ "before": [ "leader", "f", "5" ], "commands": [ "editor.foldLevel5" ], "silent": true },
-		{ "before": [ "leader", "f", "6" ], "commands": [ "editor.foldLevel6" ], "silent": true },
-		{ "before": [ "leader", "f", "7" ], "commands": [ "editor.foldLevel7" ], "silent": true },
-
-		// Some ease of use shortcuts
-		{ "before": [ "<leader>", "w" ], "commands": [ ":w" ], "silent": true },
-		{ "before": [ "<leader>", "q" ], "commands": [ ":q" ], "silent": true },
-		{ "before": [ "<leader>", "c" ], "commands": [ "editor.action.commentLine" ], "silent": true },
-		{ "before": [ "<leader>", "<space>" ], "commands": [ "editor.action.triggerSuggest" ], "silent": true }
-	],
-	"vim.visualModeKeyBindings": [
-		{ "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
-		{ "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
-		{ "before": [ "<leader>", "c" ], "commands": [ "editor.action.commentLine" ], "silent": true }
-	],
-	"vim.insertModeKeyBindings": [
-		{ "before": ["j", "j"], "after": ["<esc>"] }
-	],
-	"vim.statusBarColorControl": true,
-	// Catppucccin Frappé Status Bar Colors     background  |  foreground
-	"vim.statusBarColors.normal": [ "#303446", "#babbf1" ], // Lavender
-	"vim.statusBarColors.insert": [ "#303446", "#a6d189" ], // Green
-	"vim.statusBarColors.surroundinputmode": [ "#303446", "#a6d189" ],
-	"vim.statusBarColors.visual": [ "#303446", "#eebebe" ], // Flamingo
-	"vim.statusBarColors.visualline": [ "#303446", "#eebebe" ],
-	"vim.statusBarColors.visualblock": [ "#303446", "#eebebe" ],
-	"vim.statusBarColors.replace": [ "#303446", "#ea999c" ], // Maroon
-	"vim.statusBarColors.searchinprogressmode": [ "#303446", "#ea999c" ],
-	"vim.statusBarColors.commandlineinprogress": [ "#303446", "#ef9f76" ], // Peach
-	"vim.searchHighlightColor": "#eebebe44", // Yellow
-	"vim.searchHighlightTextColor": "#e5c890",
-	"vim.searchMatchColor": "#eebebe44",
-	"vim.searchMatchTextColor": "#e5c890",
-	"vim.substitutionColor": "#a6d18944", // Green
-	"vim.substitutionTextColor": "#a6d189",
-	"vim.foldfix": true,
-	"workbench.colorCustomizations": {
-		"statusBar.background": "#303446",
-		"statusBar.noFolderBackground": "#303446",
-		"statusBar.debuggingBackground": "#303446",
-		"statusBar.foreground": "#babbf1",
-		"statusBar.debuggingForeground": "#babbf1",
-		"editor.foldBackground": "#0000"
+	// Neovim
+	"vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+	"vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\haeckert\\AppData\\Local\\nvim\\init.lua",
+	"vscode-neovim.compositeKeys": {
+		"jj": {
+			"command": "vscode-neovim.escape",
+		},
 	},
 
 	// Improve extension performance
 	"extensions.experimental.affinity": {
-		"vscodevim.vim": 1
+		"asvetliakov.vscode-neovim": 1
 	},
 	"files.associations": {
 		".cflintrc": "json"
@@ -246,6 +168,10 @@
 		"cfthrow",
 		"cfwddx"
 	],
+	"mssql.persistQueryResultTabs": true,
+	"mssql.resultsFontFamily": "JetBrainsMono Nerd Font Mono",
+	"mssql.resultsFontSize": 12,
+	"mssql.format.alignColumnDefinitionsInColumns": true,
 	"mssql.connections": [
 		{
 			"server": "localhost",
@@ -262,5 +188,319 @@
 			"commandTimeout": 30,
 			"applicationName": "vscode-mssql"
 		}
-	]
+	],
+
+	// Replace Rules
+	"replacerules.rules": {
+        "CFML to CfScript - Part 1": {
+            "find": "<cfset ",
+            "replace": ""
+        },
+        "CFML to CfScript - Part 2": {
+            "find": ">",
+            "replace": ";"
+        },
+        "CFML to CfScript - Part 3": {
+            "find": "<!---",
+            "replace": "//"
+        },
+        "CFML to CfScript - Part 4": {
+            "find": " ---;",
+            "replace": ""
+        },
+        "CFML to CfScript - Part 5": {
+            "find": "<cf",
+            "replace": ""
+        },
+        "CFML to CfScript - Part 6": {
+            "find": "property name=\"(\\w+)\" type=\"([a-zA-Z.]+)\".*;",
+            "replace": "property $2 $1;"
+        },
+        "CFML to CfScript - Part 7": {
+            "find": " output=\"(true|false)\"",
+            "replace": ""
+        },
+        "CFML to CfScript - Part 8": {
+            "find": "function name=\"(\\w+)\" access=\"(\\w+)\" returntype=\"([a-zA-Z.]+)\".*?;",
+            "replace": "$2 $3 function $1() {"
+        },
+        "CFML to CfScript - Part 9": {
+            "find": "function name=\"(\\w+)\" returntype=\"([a-zA-Z.]+)\" access=\"(\\w+)\".*?;",
+            "replace": "$3 $2 function $1() {"
+        },
+        "CFML to CfScript - Part 10": {
+            "find": "loop array=\"#([a-zA-Z.]+)#\" index=\"([a-zA-Z.]+)\";",
+            "replace": "for( $2 in $1 ) {"
+        },
+        "CFML to CfScript - Part 11": {
+            "find": "</cf.*;",
+            "replace": "}"
+        },
+        "CFML to CfScript - Part 12": {
+            "find": "argument name=\"(\\w+)\" type=\"(.*?)\" required=\"true\";",
+            "replace": "required $2 $1;"
+        },
+        "CFML to CfScript - Part 13": {
+            "find": "argument name=\"(\\w+)\" type=\"(.*?)\" required=\"false\";",
+            "replace": "$2 $1;"
+        },
+        "CFML to CfScript - Part 14": {
+            "find": "argument name=\"(\\w+)\" type=\"(.*?)\" required=\"false\" default=\"(.*)\";",
+            "replace": "$2 $1 = $3;"
+        },
+        "CFML to CfScript - Part 15": {
+            "find": "if (.*);",
+            "replace": "if ($1) {"
+        },
+        "CFML to CfScript - Part 16": {
+            "find": "else;",
+            "replace": "} else {"
+        },
+        "CFML to CfScript - Part 17": {
+            "find": "(component.*?);",
+            "replace": "$1 {"
+        },
+        "Turn CreateObject into new": {
+            "find": "CreateObject\\(\"([a-zA-Z.]+)\"\\).init",
+            "replace": "new $1"
+        },
+        "Refactor Commas - Part 1": {
+            "find": "(\\n+|\\s+), (.*)",
+            "replace": ",$1$2"
+        },
+        "Refactor Commas - Part 2": {
+            "find": "(\\t+)  (\\S+)",
+            "replace": "$1$2"
+        },
+        "Parameter newlines": {
+            "find": "\\s*(:?\\n)+\\s*\\(",
+            "replace": "("
+        },
+        "Format else-if-for spaces": {
+            "find": "(if|elseif|for)\\s*\\(\\s*(.*?)\\s*\\)(\\s|\\n)*\\{",
+            "replace": "$1 ($2) {"
+        },
+        "Format cfparams - Part 1": {
+            "find": "cfparam\\( default=\"(.*?)\", name=\"(.*?)\" \\)",
+            "replace": "param $2 = \"$1\""
+        },
+        "Format cfparams - Part 2": {
+            "find": "param name=\"(.*?)\" type=\".*?\" default=\"(.*?)\"",
+            "replace": "param $1 = \"$2\""
+        },
+        "Format properties": {
+            "find": "property name=\"(.*?)\" type=\"(.*?)\"",
+            "replace": "property $2 $1"
+        },
+        "NOT -> !": {
+            "find": "\\(\\s*NOT\\s*",
+            "replace": "(!"
+        },
+        "Remove cf_sql_*": {
+            "find": "cf_sql_",
+            "replace": ""
+        },
+        "ArrayLen() -> Member Function": {
+            "find": "ArrayLen\\(\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.len()"
+        },
+        "ArrayAppend() -> Member Function": {
+            "find": "ArrayAppend\\(\\s*([^,]+)\\s*,\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.append($2)"
+        },
+        "ArrayToList() -> Member Function": {
+            "find": "ArrayToList\\(\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.toList()"
+        },
+        "ArrayFind() -> Member Function": {
+            "find": "ArrayFind\\(\\s*([^,]+)\\s*,\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.find($2)"
+        },
+        "ArrayFindNoCase() -> Member Function": {
+            "find": "ArrayFindNoCase\\(\\s*([^,]+)\\s*,\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.findNoCase($2)"
+        },
+        "ValueList() -> Member Function": {
+            "find": "ValueList\\(\\s*([^ ]+?).(\\w+?)\\s*\\)",
+            "replace": "$1.valueArray(\"$2\").toList()"
+        },
+        "ListToArray() -> Member Function": {
+            "find": "ListToArray\\(\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.listToArray()"
+        },
+        "ListFind() -> Member Function": {
+            "find": "ListFind\\(\\s*([^,]+)\\s*,\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.find($2)"
+        },
+        "ListFindNoCase() -> Member Function": {
+            "find": "ListFindNoCase\\(\\s*([^,]+)\\s*,\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.findNoCase($2)"
+        },
+        "StructKeyExists() -> Member Function": {
+            "find": "StructKeyExists\\(\\s*([^,]+)\\s*,\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.keyExists($2)"
+        },
+        "StructIsEmpty() -> Member Function": {
+            "find": "StructIsEmpty\\(\\s*([^)]+?)\\s*\\)",
+            "replace": "$1.isEmpty()"
+        },
+        "Clean up merge commit - Part 1": {
+            "find": "^commit [a-z0-9]+\\s+",
+            "replace": ""
+        },
+        "Clean up merge commit - Part 2": {
+            "find": "^#.*$",
+            "replace": ""
+        },
+        "Clean up merge commit - Part 3": {
+            "find": "^Author: .*",
+            "replace": ""
+        },
+        "Clean up merge commit - Part 4": {
+            "find": "^Date: .*",
+            "replace": ""
+        },
+        "Clean up merge commit - Part 5": {
+            "find": "^Squashed commit of the following:.*",
+            "replace": ""
+        },
+        "Clean up merge commit - Part 6": {
+            "find": "^\\s*(?:\\r|\\n\\r?)",
+            "replace": ""
+        },
+        "Clean up merge commit - Part 7": {
+            "find": "^\\s+",
+            "replace": ""
+        },
+        "Clean up merge commit - Part 8": {
+            "find": "^id: (\\d+) comment: (.*)",
+            "replace": "id: $1 comment: \n\n$2",
+            "flags": "u"
+        },
+        "Clean up merge commit - Part 9": {
+            "find": "^id: \\d+ comment: ([a-zA-Z0-9 .,()\\[\\]{}]+)",
+            "replace": "$1"
+        },
+        "Clean up merge commit - Part 10": {
+            "find": "\\.\\s+(\\S+)",
+            "replace": ".\n$1"
+        }
+    },
+    "replacerules.rulesets": {
+        "Convert CFML to CfScript": {
+            "rules": [
+                "CFML to CfScript - Part 1",
+                "CFML to CfScript - Part 2",
+                "CFML to CfScript - Part 3",
+                "CFML to CfScript - Part 4",
+                "CFML to CfScript - Part 5",
+                "CFML to CfScript - Part 6",
+                "CFML to CfScript - Part 7",
+                "CFML to CfScript - Part 8",
+                "CFML to CfScript - Part 9",
+                "CFML to CfScript - Part 10",
+                "CFML to CfScript - Part 11",
+                "CFML to CfScript - Part 12",
+                "CFML to CfScript - Part 13",
+                "CFML to CfScript - Part 14",
+                "CFML to CfScript - Part 15",
+                "CFML to CfScript - Part 16",
+                "CFML to CfScript - Part 17",
+                "Turn CreateObject into new",
+                "Refactor Commas - Part 1",
+                "Refactor Commas - Part 2",
+                "Parameter newlines",
+                "Format else-if-for spaces",
+                "Format cfparams - Part 1",
+                "Format cfparams - Part 2",
+                "Format properties",
+                "NOT -> !",
+                "Remove cf_sql_*",
+                "ArrayLen() -> Member Function",
+                "ArrayAppend() -> Member Function",
+                "ArrayToList() -> Member Function",
+                "ArrayFind() -> Member Function",
+                "ArrayFindNoCase() -> Member Function",
+                "ValueList() -> Member Function",
+                "ListToArray() -> Member Function",
+                "ListFind() -> Member Function",
+                "ListFindNoCase() -> Member Function",
+                "StructKeyExists() -> Member Function",
+                "StructIsEmpty() -> Member Function"
+            ]
+        },
+        "Basic refactoring": {
+            "rules": [
+                "Turn CreateObject into new",
+                "Refactor Commas - Part 1",
+                "Refactor Commas - Part 2",
+                "Parameter newlines",
+                "Format else-if-for spaces",
+                "Format cfparams - Part 1",
+                "Format cfparams - Part 2",
+                "Format properties",
+                "NOT -> !",
+                "Remove cf_sql_*",
+                "ArrayLen() -> Member Function",
+                "ArrayAppend() -> Member Function",
+                "ArrayToList() -> Member Function",
+                "ArrayFind() -> Member Function",
+                "ArrayFindNoCase() -> Member Function",
+                "ValueList() -> Member Function",
+                "ListToArray() -> Member Function",
+                "ListFind() -> Member Function",
+                "ListFindNoCase() -> Member Function",
+                "StructKeyExists() -> Member Function",
+                "StructIsEmpty() -> Member Function"
+            ]
+        },
+        "Format newlines and spaces": {
+            "rules": [
+                "Refactor Commas - Part 1",
+                "Refactor Commas - Part 2",
+                "Parameter newlines",
+                "Format else-if-for spaces"
+            ]
+        },
+        "Clean up merge commit": {
+            "rules": [
+                "Clean up merge commit - Part 1",
+                "Clean up merge commit - Part 2",
+                "Clean up merge commit - Part 3",
+                "Clean up merge commit - Part 4",
+                "Clean up merge commit - Part 5",
+                "Clean up merge commit - Part 6",
+                "Clean up merge commit - Part 7",
+                "Clean up merge commit - Part 8",
+                "Clean up merge commit - Part 9",
+                "Clean up merge commit - Part 10"
+            ]
+        }
+	},
+
+	// Catppuccin settings
+	"workbench.colorTheme": "Catppuccin Frappé",
+	"workbench.iconTheme": "catppuccin-mocha",
+    "catppuccin.accentColor": "green",
+    "catppuccin.workbenchMode": "flat",
+    "catppuccin.syncWithIconPack": false,
+    "catppuccin-icons.hidesExplorerArrows": true,
+    "catppuccin-icons.specificFolders": true,
+    "catppuccin-icons.associations.extensions": {
+        "cfm": "mjml",
+        "cfc": "cobol"
+    },
+    "catppuccin-icons.associations.files": {
+        "Service.cfc": "database"
+    },
+    "catppuccin-icons.associations.folders": {
+        "view": "folder_layouts",
+        "viewModel": "folder_workflows",
+        "service": "folder_database"
+    },
+    "catppuccin.customUIColors": {
+        "all": {
+            "editor.foldBackground": "#00000000"
+        }
+    }
 }
