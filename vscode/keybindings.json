@@ -1,7 +1,7 @@
 [
 	// Go back to text focus (and close panel)
 	{
-		"key": "shift+space space",
+		"key": "shift+backspace",
 		"command": "runCommands",
 		"args": {
 			"commands": [
@@ -198,6 +198,12 @@
 	{ // Move editor into right group
 		"key": "space shift+l",
 		"command": "workbench.action.moveEditorToRightGroup",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+	},
+
+	{ // Open definition
+		"key": "space .",
+		"command": "workbench.action.showAllSymbols",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
 	}
 ]
