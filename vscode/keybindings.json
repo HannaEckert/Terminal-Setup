@@ -93,7 +93,7 @@
 		"when": "workbench.scm.active && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
 	},
 	{ // File Explorer
-		"key": "space f",
+		"key": "space e",
 		"command": "workbench.view.explorer",
 		"when": "viewContainer.workbench.view.explorer.enabled && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
 	},
