@@ -8,7 +8,6 @@ vim.o.smartindent = true -- Automatically indent new lines
 vim.o.wrap = false -- Disable line wrapping
 vim.o.cursorline = false -- Highlight the current line
 vim.o.termguicolors = true -- Enable 24-bit RGB colors
-vim.cmd('language en_US') -- Set the layout to English
 vim.o.ignorecase = true -- Ignore case when searching
 vim.o.smartcase = true -- Except when searching with camelCase
 vim.o.updatetime = 250 -- Decrease update time
@@ -46,29 +45,32 @@ vim.keymap.set({ 'n', 'v' }, '<leader><S-j>', ':wincmd <S-j><CR>', { silent = tr
 vim.keymap.set({ 'n', 'v' }, '<leader><S-k>', ':wincmd <S-k><CR>', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<leader><S-l>', ':wincmd <S-l><CR>', { silent = true })
 
--- Fixing a folding-issue in vscode
-local vscode = require('vscode-neovim')
-local function mapMove(key, direction)
-  vim.keymap.set('n', key, function()
-    local count = vim.v.count
-    local v = 1
-    local style = 'wrappedLine'
-    if count > 0 then
-      v = count
-      style = 'line'
-    end
-    vscode.action('cursorMove', {
-      args = {
-        to = direction,
-        by = style,
-        value = v
-      }
-    })
-  end, options)
-end
 
-mapMove('k', 'up')
-mapMove('j', 'down')
+-- Fixing a folding-issue in vscode
+if vim.g.vscode then
+	local vscode = require('vscode-neovim')
+	local function mapMove(key, direction)
+	  vim.keymap.set('n', key, function()
+		local count = vim.v.count
+		local v = 1
+		local style = 'wrappedLine'
+		if count > 0 then
+		  v = count
+		  style = 'line'
+		end
+		vscode.action('cursorMove', {
+		  args = {
+			to = direction,
+			by = style,
+			value = v
+		  }
+		})
+	  end, options)
+	end
+
+	mapMove('k', 'up')
+	mapMove('j', 'down')
+end
 
 -- Load plugins
 require('config.lazy')
