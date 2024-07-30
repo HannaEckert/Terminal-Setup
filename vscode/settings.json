@@ -56,17 +56,17 @@
 	"editor.codeLensFontFamily": "JetBrainsMono Nerd Font Mono",
 	"editor.inlineSuggest.fontFamily": "JetBrainsMono Nerd Font Mono",
 	"editor.experimentalInlineEdit.fontFamily": "JetBrainsMono Nerd Font Mono",
-	"scm.inputFontSize": 14,
-	"debug.console.fontSize": 14,
-	"chat.editor.fontSize": 14,
-	"markdown.preview.fontSize": 14,
-	"notebook.markup.fontSize": 14,
-	"notebook.output.fontSize": 14,
-	"editor.fontSize": 14,
-	"editor.suggestFontSize": 14,
-	"editor.codeLensFontSize": 14,
-	"editor.inlayHints.fontSize": 14,
-	"terminal.integrated.fontSize": 14,
+	"scm.inputFontSize": 12,
+	"debug.console.fontSize": 12,
+	"chat.editor.fontSize": 12,
+	"markdown.preview.fontSize": 12,
+	"notebook.markup.fontSize": 12,
+	"notebook.output.fontSize": 12,
+	"editor.fontSize": 12,
+	"editor.suggestFontSize": 12,
+	"editor.codeLensFontSize": 12,
+	"editor.inlayHints.fontSize": 12,
+	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.fontWeightBold": "normal",
 	"terminal.integrated.letterSpacing": 1,
 	"terminal.integrated.lineHeight": 1.05,
@@ -83,6 +83,7 @@
 	"javascript.updateImportsOnFileMove.enabled": "always",
 
 	// Neovim
+	"vscode-neovim.logOutputToConsole": true,
 	"vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
 	"vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\haeckert\\AppData\\Local\\nvim\\init.lua",
 	"vscode-neovim.compositeKeys": {
@@ -170,9 +171,6 @@
 		"cfwddx"
 	],
 	"mssql.persistQueryResultTabs": true,
-	"mssql.resultsFontFamily": "JetBrainsMono Nerd Font Mono",
-	"mssql.resultsFontSize": 12,
-	"mssql.format.alignColumnDefinitionsInColumns": true,
 	"mssql.connections": [
 		{
 			"server": "localhost",

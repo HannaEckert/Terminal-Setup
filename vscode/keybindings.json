@@ -10,121 +10,181 @@
 			]
 		}
 	},
+	{ // Make it possible to jump out of non-editor editors (e. g. mssql results)
+		"key": "shift+backspace",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.moveEditorToLeftGroup",
+				"workbench.action.closeActiveEditor"
+			]
+		},
+		"when": "!editorFocus && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
 
 	// Expand / Contract the current view
 	{ // Expand
 		"key": "space z",
 		"command": "workbench.action.minimizeOtherEditors",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Contract
 		"key": "space shift+z",
 		"command": "workbench.action.evenEditorWidths",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
 	{ // Comment line
 		"key": "space c",
 		"command": "editor.action.commentLine",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
 	// Code Folding
 	{ // Unfold everything
 		"key": "space f 0",
 		"command": "editor.unfoldAll",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Fold the current block
 		"key": "space f f",
 		"command": "editor.toggleFold",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Fold level 1
 		"key": "space f 1",
 		"command": "editor.foldLevel1",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Fold level 2
 		"key": "space f 2",
 		"command": "editor.foldLevel2",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Fold level 3
 		"key": "space f 3",
 		"command": "editor.foldLevel3",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Fold level 4
 		"key": "space f 4",
 		"command": "editor.foldLevel4",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Fold level 5
 		"key": "space f 5",
 		"command": "editor.foldLevel5",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Fold level 6
 		"key": "space f 6",
 		"command": "editor.foldLevel6",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Fold level 7
 		"key": "space f 7",
 		"command": "editor.foldLevel7",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
 	// Panel Handling
 	{ // Side bar
 		"key": "space b",
 		"command": "workbench.action.toggleSidebarVisibility",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Panel (Terminal)
 		"key": "space t",
 		"command": "workbench.action.terminal.toggleTerminal",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Git (Source Control)
 		"key": "space g",
-		"command": "workbench.view.scm",
-		"when": "workbench.scm.active && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.scm.action.focusNextResourceGroup",
+				"workbench.scm.action.focusNextResourceGroup"
+			]
+		},
+		"when": "workbench.scm.active && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // File Explorer
 		"key": "space e",
-		"command": "workbench.view.explorer",
-		"when": "viewContainer.workbench.view.explorer.enabled && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"command": "workbench.explorer.fileView.focus",
+		"when": "viewContainer.workbench.view.explorer.enabled && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Global Search
 		"key": "space shift+7",
 		"command": "workbench.action.findInFiles",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Docker view
 		"key": "space d",
 		"command": "dockerContainers.focus",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+
+	// Git commands
+	{ // Stage
+		"key": "s",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"git.stage",
+				"workbench.scm.action.focusNextResourceGroup",
+				"workbench.scm.action.focusNextResourceGroup"
+			]
+		},
+		"when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus"
+	},
+	{ // Unstage
+		"key": "u",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"git.unstage",
+				"workbench.scm.action.focusNextResourceGroup",
+				"workbench.scm.action.focusNextResourceGroup"
+			]
+		},
+		"when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus"
+	},
+	{ // Focus the commit field
+		"key": "c",
+		"command": "workbench.scm.action.focusNextInput",
+		"when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && !inputFocus"
+	},
+	{ // Execute commit
+		"key": "shift+enter",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"git.commit",
+				"workbench.action.focusActiveEditorGroup",
+				"workbench.action.closePanel"
+			]
+		},
+		"when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && inputFocus"
 	},
 
 	// The Action Bar
 	{ // Open File
 		"key": "space p",
 		"command": "workbench.action.quickOpen",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Execute Command
 		"key": "space shift+p",
 		"command": "workbench.action.showCommands",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
 	// Navigation in Quick Open and Suggest
 	{ // Trigger Suggestions
 		"key": "space space",
 		"command": "editor.action.triggerSuggest",
-		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Select next suggestion
 		"key": "shift+tab",
@@ -137,11 +197,33 @@
 		"when": "inQuickInput && !inEditorsPicker"
 	},
 
+	// Change navigation
+	{ // Go to next change in diff view
+		"key": "space oem_comma",
+		"command": "workbench.action.compareEditor.nextChange",
+		"when": "textCompareEditorVisible&&!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Go to next change in regular editor
+		"key": "space oem_comma",
+		"command": "workbench.action.editor.nextChange",
+		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Go to previous change in diff view
+		"key": "space shift+oem_comma",
+		"command": "workbench.action.compareEditor.previousChange",
+		"when": "textCompareEditorVisible && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Go to previous change in regular editor
+		"key": "space shift+oem_comma",
+		"command": "workbench.action.editor.previousChange",
+		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+
 	// Tab navigation
 	{ // Show tab overview
 		"key": "shift+tab",
 		"command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
-		"when": "!activeEditorGroupEmpty && !suggestWidgetVisible && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!sideBarFocus && !activeEditorGroupEmpty && !suggestWidgetVisible && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Navigate through tab overview
 		"key": "shift+tab",
@@ -153,57 +235,63 @@
 	{ // Split editor vertically
 		"key": "space v",
 		"command": "workbench.action.splitEditor",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Split editor horizonally
 		"key": "space s",
 		"command": "workbench.action.splitEditorDown",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Focus left editor group
 		"key": "space h",
 		"command": "workbench.action.focusLeftGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Focus below editor group
 		"key": "space j",
 		"command": "workbench.action.focusBelowGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Focus above editor group
 		"key": "space k",
 		"command": "workbench.action.focusAboveGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Focus right editor group
 		"key": "space l",
 		"command": "workbench.action.focusRightGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Move editor into left group
 		"key": "space shift+h",
 		"command": "workbench.action.moveEditorToLeftGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Move editor into below group
 		"key": "space shift+j",
 		"command": "workbench.action.moveEditorToBelowGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Move editor into above group
 		"key": "space shift+k",
 		"command": "workbench.action.moveEditorToAboveGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Move editor into right group
 		"key": "space shift+l",
 		"command": "workbench.action.moveEditorToRightGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
 	{ // Open definition
 		"key": "space .",
 		"command": "workbench.action.showAllSymbols",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+
+	{ // Run mssql query
+		"key": "space r",
+		"command": "mssql.runQuery",
+		"when": "editorTextFocus && editorLangId == 'sql' && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	}
 ]
