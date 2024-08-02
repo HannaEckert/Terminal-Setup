@@ -7,5 +7,6 @@ sudo apt install zsh
 
 echo "Setting the .zshrc symlink"
 ln -sf $currentDirectory/zshrc ~/.zshrc
+ln -sf $currentDirectory/zsh ~/.config/zsh
 
 exit 0
