@@ -6,7 +6,8 @@
 		"args": {
 			"commands": [
 				"workbench.action.focusActiveEditorGroup",
-				"workbench.action.closePanel"
+				"workbench.action.closePanel",
+				"workbench.action.closeSidebar"
 			]
 		}
 	},
@@ -19,7 +20,7 @@
 				"workbench.action.closeActiveEditor"
 			]
 		},
-		"when": "!editorFocus && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+		"when": "!sideBarFocus && !inputFocus && !editorFocus && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
 	},
 
 	// Expand / Contract the current view
