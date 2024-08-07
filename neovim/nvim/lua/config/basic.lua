@@ -11,7 +11,7 @@ vim.o.smartindent = true
 -- Search Settings
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.o.incsearch = true
 
 -- Undo History
