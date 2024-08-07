@@ -120,11 +120,6 @@
 		"command": "workbench.action.findInFiles",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
-	{ // Docker view
-		"key": "space d",
-		"command": "dockerContainers.focus",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
 
 	// Git commands
 	{ // Stage
@@ -281,12 +276,6 @@
 	{ // Move editor into right group
 		"key": "space shift+l",
 		"command": "workbench.action.moveEditorToRightGroup",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-
-	{ // Open definition
-		"key": "space .",
-		"command": "workbench.action.showAllSymbols",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 

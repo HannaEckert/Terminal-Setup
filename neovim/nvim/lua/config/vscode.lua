@@ -1,5 +1,5 @@
 -- Fixing a folding-issue in vscode
-local vscode = require('vscode-neovim')
+local vscode = require('vscode')
 
 local function mapMove(key, direction)
 	vim.keymap.set('n', key, function()
@@ -22,3 +22,5 @@ end
 
 mapMove('k', 'up')
 mapMove('j', 'down')
+
+vim.keymap.set('n', 'gd', function() vscode.action('workbench.action.showAllSymbols') end)
