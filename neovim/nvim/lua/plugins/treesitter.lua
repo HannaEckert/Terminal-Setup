@@ -6,15 +6,34 @@ return {
 
 		configs.setup({
 			ensure_installed = {
-				"lua", "c", "vim", "vimdoc", "query", "javascript", "html",
-				"java", "python", "bash", "cmake", "css", "dockerfile", "gitcommit",
-				"markdown", "perl", "php", "python", "ruby", "sql", "toml",
-				"typescript", "xml"
+				"lua",
+				"c",
+				"vim",
+				"vimdoc",
+				"query",
+				"javascript",
+				"html",
+				"java",
+				"python",
+				"bash",
+				"cmake",
+				"css",
+				"dockerfile",
+				"gitcommit",
+				"markdown",
+				"perl",
+				"php",
+				"python",
+				"ruby",
+				"sql",
+				"toml",
+				"typescript",
+				"xml",
 			},
 			sync_install = false,
 			auto_install = true,
 			highlight = { enable = true },
-			indent = { enable = true }
+			indent = { enable = true },
 		})
-	end
+	end,
 }

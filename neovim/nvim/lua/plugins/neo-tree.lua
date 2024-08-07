@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
-		"MunifTanjim/nui.nvim"
+		"MunifTanjim/nui.nvim",
 	},
 	config = function()
 		require("neo-tree").setup({
@@ -13,11 +13,12 @@ return {
 					event = "file_open_requested",
 					handler = function()
 						require("neo-tree.command").execute({ action = "close" })
-					end
+					end,
 				},
-			}
+			},
 		})
 
-		vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left<CR>')
-	end
+		vim.keymap.set("n", "<leader>e", ":Neotree<CR>")
+		vim.keymap.set("n", "<leader><tab>", ":Neotree buffers<CR>")
+	end,
 }

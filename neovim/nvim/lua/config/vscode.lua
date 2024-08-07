@@ -1,26 +1,28 @@
 -- Fixing a folding-issue in vscode
-local vscode = require('vscode')
+local vscode = require("vscode")
 
 local function mapMove(key, direction)
-	vim.keymap.set('n', key, function()
+	vim.keymap.set("n", key, function()
 		local count = vim.v.count
 		local v = 1
-		local style = 'wrappedLine'
+		local style = "wrappedLine"
 		if count > 0 then
 			v = count
-			style = 'line'
+			style = "line"
 		end
-		vscode.action('cursorMove', {
+		vscode.action("cursorMove", {
 			args = {
 				to = direction,
 				by = style,
-				value = v
-			}
+				value = v,
+			},
 		})
 	end)
 end
 
-mapMove('k', 'up')
-mapMove('j', 'down')
+mapMove("k", "up")
+mapMove("j", "down")
 
-vim.keymap.set('n', 'gd', function() vscode.action('workbench.action.showAllSymbols') end)
+vim.keymap.set("n", "gd", function()
+	vscode.action("workbench.action.showAllSymbols")
+end)

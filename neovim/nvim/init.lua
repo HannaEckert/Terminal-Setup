@@ -1,10 +1,9 @@
-require('config.basic')
-require('config.mappings')
+require("config.basic")
+require("config.mappings")
 
 -- Load Plugins (or Setup for VSCode)
 if vim.g.vscode then
-	require('config.vscode')
+	require("config.vscode")
 else
-	require('config.lazy')
+	require("config.lazy")
 end
-

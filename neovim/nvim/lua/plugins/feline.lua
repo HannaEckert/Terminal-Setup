@@ -4,15 +4,15 @@ return {
 		lazy = false,
 		config = function()
 			require("nvim-web-devicons").setup()
-		end
+		end,
 	},
 	{
-		'freddiehaddad/feline.nvim',
+		"freddiehaddad/feline.nvim",
 		lazy = false,
 		config = function()
 			require("feline").setup({
-				components = require('catppuccin.groups.integrations.feline').get(),
+				components = require("catppuccin.groups.integrations.feline").get(),
 			})
-		end
-	}
+		end,
+	},
 }
