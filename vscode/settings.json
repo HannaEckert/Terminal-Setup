@@ -1,14 +1,21 @@
 {
 	// Workbench
 	"workbench.startupEditor": "none",
-	"workbench.activityBar.location": "top",
+	"workbench.activityBar.location": "hidden",
 	"workbench.tree.renderIndentGuides": "none",
 	"git.openRepositoryInParentFolders": "never",
 	"security.workspace.trust.untrustedFiles": "open",
 	"security.workspace.trust.emptyWindow": true,
 	"diffEditor.useInlineViewWhenSpaceIsLimited": true,
-	"window.menuBarVisibility": "compact",
+	"window.menuBarVisibility": "hidden",
 	"workbench.editor.labelFormat": "short",
+	"workbench.editor.showTabs": "none",
+	"editor.overviewRulerBorder": false,
+	"editor.matchBrackets": "never",
+	"editor.glyphMargin": false,
+	"window.commandCenter": false,
+	"workbench.layoutControl.enabled": false,
+	"workbench.editor.editorActionsLocation": "hidden",
 
 	// Editor
 	"editor.folding": true,
@@ -22,7 +29,6 @@
 	"editor.cursorBlinking": "solid",
 	"editor.lineNumbers": "relative",
 	"editor.cursorSurroundingLines": 15,
-	"breadcrumbs.enabled": false,
 
 	// Disable annoying messages
 	"explorer.confirmDelete": false,
@@ -84,8 +90,9 @@
 
 	// Neovim
 	"vscode-neovim.logOutputToConsole": true,
-	"vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
-	"vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\haeckert\\AppData\\Local\\nvim\\init.lua",
+	"vscode-neovim.useWSL": true,
+	"vscode-neovim.wslDistribution": "Ubuntu",
+	"vscode-neovim.neovimExecutablePaths.linux": "/snap/bin/nvim",
 	"vscode-neovim.compositeKeys": {
 		"jj": {
 			"command": "vscode-neovim.escape",
@@ -96,98 +103,6 @@
 	"extensions.experimental.affinity": {
 		"asvetliakov.vscode-neovim": 1
 	},
-	"files.associations": {
-		".cflintrc": "json"
-	},
-	"editor.inlineSuggest.suppressSuggestions": true,
-	"auto-close-tag.excludedTags": [
-		"area",
-		"base",
-		"br",
-		"col",
-		"command",
-		"embed",
-		"hr",
-		"img",
-		"input",
-		"keygen",
-		"link",
-		"meta",
-		"param",
-		"source",
-		"track",
-		"wbr",
-		"cfabort",
-		"cfapplication",
-		"cfargument",
-		"cfassociate",
-		"cfbreak",
-		"cfchartdata",
-		"cfcollection",
-		"cfcontent",
-		"cfcontinue",
-		"cfcookie",
-		"cfdirectory",
-		"cfdump",
-		"cfelse",
-		"cfelseif",
-		"cferror",
-		"cfexecute",
-		"cfexit",
-		"cffile",
-		"cfflush",
-		"cfheader",
-		"cfhttpparam",
-		"cfimage",
-		"cfimport",
-		"cfinclude",
-		"cfindex",
-		"cfinput",
-		"cfinvokeargument",
-		"cflocation",
-		"cflog",
-		"cfloginuser",
-		"cflogout",
-		"cfmailparam",
-		"cfobject",
-		"cfobjectcache",
-		"cfparam",
-		"cfpop",
-		"cfprocessingdirective",
-		"cfprocparam",
-		"cfprocresult",
-		"cfproperty",
-		"cfqueryparam",
-		"cfregistry",
-		"cfreportparam",
-		"cfrethrow",
-		"cfreturn",
-		"cfschedule",
-		"cfspreadsheet",
-		"cfsearch",
-		"cfset",
-		"cfsetting",
-		"cfthrow",
-		"cfwddx"
-	],
-	"mssql.persistQueryResultTabs": true,
-	"mssql.connections": [
-		{
-			"server": "localhost",
-			"database": "ventari",
-			"authenticationType": "SqlLogin",
-			"user": "sa",
-			"password": "",
-			"emptyPasswordInput": false,
-			"savePassword": true,
-			"profileName": "localhost",
-			"encrypt": "Mandatory",
-			"trustServerCertificate": true,
-			"connectTimeout": 15,
-			"commandTimeout": 30,
-			"applicationName": "vscode-mssql"
-		}
-	],
 
 	// Catppuccin settings
 	"workbench.colorTheme": "Catppuccin Frappé",
@@ -213,5 +128,9 @@
         "all": {
             "editor.foldBackground": "#00000000"
         }
-	}
+	},
+
+	// File Path
+	"currentFilePath.defaultPathStartsFrom": "workSpace",
+	"currentFilePath.priorityInStatusBar": 50
 }

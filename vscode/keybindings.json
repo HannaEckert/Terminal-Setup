@@ -1,6 +1,6 @@
 [
-	// Go back to text focus (and close panel)
-	{
+// Go back to text focus (and close panel)
+	{ // This should always work (even when in terminal)
 		"key": "shift+backspace",
 		"command": "runCommands",
 		"args": {
@@ -9,10 +9,22 @@
 				"workbench.action.closePanel",
 				"workbench.action.closeSidebar"
 			]
-		}
+		},
+	},
+	{
+		"key": "backspace",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.focusActiveEditorGroup",
+				"workbench.action.closePanel",
+				"workbench.action.closeSidebar"
+			]
+		},
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Make it possible to jump out of non-editor editors (e. g. mssql results)
-		"key": "shift+backspace",
+		"key": "backspace",
 		"command": "runCommands",
 		"args": {
 			"commands": [
@@ -21,6 +33,12 @@
 			]
 		},
 		"when": "!sideBarFocus && !inputFocus && !editorFocus && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny"
+	},
+
+	{ // Close open editor
+		"key": "space x",
+		"command": "workbench.action.closeActiveEditor",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
 	// Expand / Contract the current view
@@ -38,53 +56,6 @@
 	{ // Comment line
 		"key": "space c",
 		"command": "editor.action.commentLine",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-
-	// Code Folding
-	{ // Unfold everything
-		"key": "space f 0",
-		"command": "editor.unfoldAll",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Fold the current block
-		"key": "space f f",
-		"command": "editor.toggleFold",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Fold level 1
-		"key": "space f 1",
-		"command": "editor.foldLevel1",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Fold level 2
-		"key": "space f 2",
-		"command": "editor.foldLevel2",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Fold level 3
-		"key": "space f 3",
-		"command": "editor.foldLevel3",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Fold level 4
-		"key": "space f 4",
-		"command": "editor.foldLevel4",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Fold level 5
-		"key": "space f 5",
-		"command": "editor.foldLevel5",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Fold level 6
-		"key": "space f 6",
-		"command": "editor.foldLevel6",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Fold level 7
-		"key": "space f 7",
-		"command": "editor.foldLevel7",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
@@ -212,6 +183,18 @@
 	{ // Go to previous change in regular editor
 		"key": "space shift+oem_comma",
 		"command": "workbench.action.editor.previousChange",
+		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+
+	// Problem Navigation
+	{ // Go to next problem
+		"key": "space .",
+		"command": "editor.action.marker.next",
+		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Go to previous problem
+		"key": "space >",
+		"command": "editor.action.marker.prevInFiles",
 		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
