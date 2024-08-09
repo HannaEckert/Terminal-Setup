@@ -186,6 +186,32 @@
 		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
+	// Faster Scrolling Up and Down
+	{ // Scroll Up
+		"key": "ctrl+u",
+		"command": "runCommands",
+		"args": { "commands": [ "cursorPageUp", { "command": "vscode-neovim.send", "args": [ "zz" ] } ] },
+		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)",
+	},
+	{ // Scroll Down
+		"key": "ctrl+d",
+		"command": "runCommands",
+		"args": { "commands": [ "cursorPageDown", { "command": "vscode-neovim.send", "args": [ "zz" ] } ] },
+		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)",
+	},
+	{ // Scroll Up
+		"key": "space u",
+		"command": "runCommands",
+		"args": { "commands": [ "cursorPageUp", { "command": "vscode-neovim.send", "args": [ "zz" ] } ] },
+		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)",
+	},
+	{ // Scroll Down
+		"key": "space d",
+		"command": "runCommands",
+		"args": { "commands": [ "cursorPageDown", { "command": "vscode-neovim.send", "args": [ "zz" ] } ] },
+		"when": "editorTextFocus && !textCompareEditorActive && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)",
+	},
+
 	// Problem Navigation
 	{ // Go to next problem
 		"key": "space .",

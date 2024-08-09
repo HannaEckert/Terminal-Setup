@@ -16,9 +16,10 @@
 	"window.commandCenter": false,
 	"workbench.layoutControl.enabled": false,
 	"workbench.editor.editorActionsLocation": "hidden",
+	"breadcrumbs.enabled": false,
 
 	// Editor
-	"editor.folding": true,
+	"editor.folding": false,
 	"editor.guides.indentation": false,
 	"editor.scrollbar.verticalScrollbarSize": 10,
 	"editor.minimap.enabled": false,
