@@ -29,3 +29,20 @@ vim.o.wrap = false
 vim.o.cursorline = false
 vim.o.termguicolors = true
 vim.o.updatetime = 50
+
+-- Set Syntax Highlight for BoxLang
+local bx_syntax_group = vim.api.nvim_create_augroup("bx_syntax", { clear = true })
+vim.api.nvim_create_autocmd(
+	{ "BufNewFile", "BufRead" },
+	{ pattern = { "*.bx", "*.bxs", "*.bxm", "*.cfs", "*.cfm" }, command = "set syntax=cf", group = bx_syntax_group }
+)
+
+-- Yank Highlighting
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("highlight_yank", {}),
+	desc = "Hightlight selection on yank",
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 500 })
+	end,
+})

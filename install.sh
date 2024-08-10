@@ -10,9 +10,12 @@ $currentDirectory/zsh/install.sh && \
 $currentDirectory/java/install.sh && \
 $currentDirectory/starship/install.sh && \
 $currentDirectory/bat/install.sh && \
+$currentDirectory/docker/install.sh && \
 $currentDirectory/eza/install.sh && \
 $currentDirectory/git/install.sh && \
+$currentDirectory/lazygit/install.sh && \
 $currentDirectory/tmux/install.sh && \
+$currentDirectory/vscode/install.sh && \
 $currentDirectory/neovim/install.sh && \
 $currentDirectory/jetBrainsMono/install.sh
 

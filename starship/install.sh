@@ -6,6 +6,7 @@ echo "Installing Starship"
 curl -sS https://starship.rs/install.sh | sh
 
 echo "Setting the config symlink"
+mkdir -p ~/.config
 ln -sf $currentDirectory/starship.toml ~/.config/
 
 exit 0
