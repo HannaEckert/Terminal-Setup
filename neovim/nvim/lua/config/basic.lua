@@ -32,7 +32,7 @@ vim.o.updatetime = 50
 
 -- Use the system clipboard if available
 if vim.fn.has("clipboard") == 1 then
-    vim.opt.clipboard = "unnamedplus"
+	vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 end
 
 -- Set Syntax Highlight for BoxLang
