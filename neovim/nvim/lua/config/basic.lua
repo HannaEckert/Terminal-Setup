@@ -30,6 +30,11 @@ vim.o.cursorline = false
 vim.o.termguicolors = true
 vim.o.updatetime = 50
 
+-- Use the system clipboard if available
+if vim.fn.has("clipboard") == 1 then
+    vim.opt.clipboard = "unnamedplus"
+end
+
 -- Set Syntax Highlight for BoxLang
 local bx_syntax_group = vim.api.nvim_create_augroup("bx_syntax", { clear = true })
 vim.api.nvim_create_autocmd(
