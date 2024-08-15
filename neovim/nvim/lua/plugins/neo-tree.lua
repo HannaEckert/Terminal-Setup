@@ -8,6 +8,7 @@ return {
 	},
 	config = function()
 		require("neo-tree").setup({
+			use_popups_for_input = false,
 			event_handlers = {
 				{
 					event = "file_open_requested",
@@ -19,7 +20,6 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>e", ":Neotree reveal left %:p:h:h %:p<CR>")
-		vim.keymap.set("n", "<leader><tab>", ":Neotree buffers<CR>")
 		vim.keymap.set("n", "<BS>", ":Neotree close<CR>")
 	end,
 }

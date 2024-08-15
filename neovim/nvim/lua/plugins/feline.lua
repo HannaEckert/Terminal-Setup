@@ -1,14 +1,9 @@
 return {
 	{
-		"kyazdani42/nvim-web-devicons",
-		lazy = false,
-		config = function()
-			require("nvim-web-devicons").setup()
-		end,
-	},
-	{
 		"freddiehaddad/feline.nvim",
-		lazy = false,
+		dependencies = {
+			"kyazdani42/nvim-web-devicons",
+		},
 		config = function()
 			local components = require("catppuccin.groups.integrations.feline").get()
 			local lazyStatus = require("lazy.status")
