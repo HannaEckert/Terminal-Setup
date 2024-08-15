@@ -18,7 +18,8 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>e", ":Neotree<CR>")
+		vim.keymap.set("n", "<leader>e", ":Neotree reveal left %:p:h:h %:p<CR>")
 		vim.keymap.set("n", "<leader><tab>", ":Neotree buffers<CR>")
+		vim.keymap.set("n", "<BS>", ":Neotree close<CR>")
 	end,
 }
