@@ -11,5 +11,6 @@ return {
 		{ "<leader>j", "<cmd>TmuxNavigateDown<cr>" },
 		{ "<leader>k", "<cmd>TmuxNavigateUp<cr>" },
 		{ "<leader>l", "<cmd>TmuxNavigateRight<cr>" },
+		{ "<C-r>", "<cmd>silent !tmux send-keys -t :.+ Up Enter<CR>" },
 	},
 }
