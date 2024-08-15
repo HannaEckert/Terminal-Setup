@@ -1,4 +1,4 @@
-PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.local/bin:/snap/bin"
 CONFIG_PATH="$HOME/.config/zsh"
 
 source $CONFIG_PATH/aliases.zsh
