@@ -25,13 +25,11 @@ vim.keymap.set({ "n", "v" }, "<leader><S-j>", ":wincmd <S-j><CR>", { silent = tr
 vim.keymap.set({ "n", "v" }, "<leader><S-k>", ":wincmd <S-k><CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader><S-l>", ":wincmd <S-l><CR>", { silent = true })
 
-<<<<<<< Updated upstream
 -- Easy close file
 vim.keymap.set({ "n", "v" }, "<leader>x", "<cmd>q<CR>", { silent = true })
-=======
+
 -- Remap up-down movement
 vim.keymap.set({ "n", "v" }, "<C-u>", "<C-u>zz", { silent = true })
 vim.keymap.set({ "n", "v" }, "<C-d>", "<C-d>zz", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>u", "<C-u>zz", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>d", "<C-d>zz", { silent = true })
->>>>>>> Stashed changes
