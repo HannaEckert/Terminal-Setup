@@ -1,5 +1,6 @@
-PATH="$PATH:$HOME/.local/bin:/snap/bin"
-CONFIG_PATH="$HOME/.config/zsh"
+export PATH="$PATH:$HOME/.local/bin:/snap/bin"
+export CONFIG_PATH="$HOME/.config/zsh"
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac)))) 
 
 source $CONFIG_PATH/aliases.zsh
 source $CONFIG_PATH/vim_bindings.zsh
