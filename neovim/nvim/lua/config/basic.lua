@@ -21,8 +21,8 @@ vim.o.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 vim.o.undofile = true
 
 -- Lines Around Cursor
-vim.o.scrolloff = 10
-vim.o.sidescrolloff = 10
+vim.o.scrolloff = 6
+vim.o.sidescrolloff = 6
 
 -- Various Other
 vim.o.wrap = false
