@@ -20,19 +20,22 @@ vim.o.backup = false
 vim.o.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 vim.o.undofile = true
 
+-- Cursor visibility
+vim.o.guicursor = "n-v-c-sm:hor20,i-ci-ve:ver25,r-cr-o:hor20"
+
 -- Lines Around Cursor
 vim.o.scrolloff = 6
 vim.o.sidescrolloff = 6
 
 -- Various Other
 vim.o.wrap = false
-vim.o.cursorline = false
+vim.o.cursorline = true
 vim.o.termguicolors = true
 vim.o.updatetime = 50
 
 -- Use the system clipboard if available
 if vim.fn.has("clipboard") == 1 then
-	vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
+	vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 end
 
 -- Set Syntax Highlight for BoxLang
