@@ -20,16 +20,13 @@ vim.o.backup = false
 vim.o.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 vim.o.undofile = true
 
--- Cursor visibility
-vim.o.guicursor = "n-v-c-sm:hor20,i-ci-ve:ver25,r-cr-o:hor20"
-
 -- Lines Around Cursor
 vim.o.scrolloff = 6
 vim.o.sidescrolloff = 6
 
 -- Various Other
 vim.o.wrap = false
-vim.o.cursorline = true
+vim.o.cursorline = false
 vim.o.termguicolors = true
 vim.o.updatetime = 50
 
@@ -37,13 +34,6 @@ vim.o.updatetime = 50
 if vim.fn.has("clipboard") == 1 then
 	vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 end
-
--- Set Syntax Highlight for BoxLang
-local bx_syntax_group = vim.api.nvim_create_augroup("bx_syntax", { clear = true })
-vim.api.nvim_create_autocmd(
-	{ "BufNewFile", "BufRead" },
-	{ pattern = { "*.bx", "*.bxs", "*.bxm", "*.cfs", "*.cfm" }, command = "set syntax=cf", group = bx_syntax_group }
-)
 
 -- Yank Highlighting
 vim.api.nvim_create_autocmd("TextYankPost", {
