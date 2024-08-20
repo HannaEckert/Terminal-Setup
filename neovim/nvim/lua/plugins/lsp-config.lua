@@ -60,6 +60,9 @@ return {
 									name = "profile",
 									location = ".cfmlsp",
 								},
+								globalStoragePath = {
+									uri = targetConfigPath
+								}
 							}
 
 							-- Copy default profile.xml if it doesn't exist yet

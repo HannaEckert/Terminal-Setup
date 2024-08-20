@@ -154,7 +154,7 @@
 		<setting id="com.adobe.ide.editor.cfml.formatting.blanklineafterscriptblock" value="true"/>
 		<setting id="com.adobe.ide.editor.cfml.formatting.blanklinebeforefunctiondeclaration" value="true"/>
 		<setting id="com.adobe.ide.editor.cfml.formatting.wrapstructinitializers" value="true"/>
-		<setting id="com.adobe.ide.editor.cfml.formatting.maxcolumnwidth" value="100"/>
+		<setting id="com.adobe.ide.editor.cfml.formatting.maxcolumnwidth" value="120"/>
 		<setting id="com.adobe.ide.editor.cfml.formatting.spacebetweenstructinitializers" value="true"/>
 		<setting id="com.adobe.ide.editor.cfml.formatting.blanklineafterswitchblock" value="true"/>
 		<setting id="com.adobe.ide.editor.cfml.formatting.attributecase" value="0"/>
