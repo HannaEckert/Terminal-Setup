@@ -1,6 +1,10 @@
-# Set the shell to vim mode
+# A better vim mode
 bindkey -v
-bindkey -M viins 'jj' vi-cmd-mode
+function zvm_config() {
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+  ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+}
+source $CONFIG_PATH/zsh_vi_mode.zsh
 
 # Tmux Pane Navigation
 function tmux_left() { tmux select-pane -L }
@@ -29,3 +33,5 @@ bindkey -M vicmd ' l' tmux_right
 
 bindkey -M vicmd ' v' tmux_split_horizontal
 bindkey -M vicmd ' s' tmux_split_vertical
+
+

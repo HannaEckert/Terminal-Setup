@@ -8,12 +8,9 @@ export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 
-export FZF_DEFAULT_OPTS="--preview 'batcat --color=always {}'"
-export FZF_CTRL_T_OPTS="--preview 'batcat -n --color=always --line-range :500 {}'"
-export FZF_ALT_C_OPTS="--preview 'eza --tree --icons --color=always {} | head -200'"
-
-_fzf_compgen_path() {
-	fd --hidden --exclude .git . "$1"
+_fzf_complete_git() {
+	git branch -a --no-color | grep -v '/HEAD\s' | sed -r 's/(\*){0,1}\s*(remotes\/){0,1}//' | \
+	_fzf_complete --height 40 --reverse --prompt="$1> " -- "$@"
 }
 
 _fzf_compgen_dir() {
@@ -28,6 +25,7 @@ _fzf_comprun() {
 		cd)				fzf --preview 'eza --tree --icons --color=always {} | head -200' "$@" ;;
 		export|unset)	fzf --preview "eval 'echo \$' {}" "$@";;
 		ssh)			fzf --preview 'dig {}' "$@";;
+		git)			fzf --preview 'git log -3 {} | batcat -n --color=always' "$@";;
 		*)				fzf --preview 'batcat -n --color=always --line-range :500 {}' "$@";;
 	esac
 }
