@@ -8,6 +8,9 @@ return {
 			local components = require("catppuccin.groups.integrations.feline").get()
 			local lazyStatus = require("lazy.status")
 
+			-- Change the mode icon
+			components.active[1][1].provider = "  "
+
 			-- Component for lazy.nvim upgrades
 			table.insert(components.active[2], {
 				enabled = lazyStatus.has_updates,
@@ -21,6 +24,8 @@ return {
 					style = "bold",
 				},
 			})
+
+			vim.o.showmode = false
 
 			require("feline").setup({
 				components = components,
