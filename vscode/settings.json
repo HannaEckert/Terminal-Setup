@@ -17,6 +17,8 @@
 	"workbench.layoutControl.enabled": false,
 	"workbench.editor.editorActionsLocation": "hidden",
 	"breadcrumbs.enabled": false,
+	"accessibility.dimUnfocused.enabled": true,
+	"workbench.editor.revealIfOpen": true,
 
 	// Editor
 	"editor.folding": false,
@@ -30,6 +32,10 @@
 	"editor.cursorBlinking": "solid",
 	"editor.lineNumbers": "relative",
 	"editor.cursorSurroundingLines": 15,
+	"files.eol": "\r\n",
+	"gitblame.ignoreWhitespace": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.renderLineHighlight": "none",
 
 	// Disable annoying messages
 	"explorer.confirmDelete": false,
@@ -125,13 +131,10 @@
         "viewModel": "folder_workflows",
         "service": "folder_database"
     },
-    "catppuccin.customUIColors": {
-        "all": {
-            "editor.foldBackground": "#00000000"
         }
-	},
 
 	// File Path
 	"currentFilePath.defaultPathStartsFrom": "workSpace",
-	"currentFilePath.priorityInStatusBar": 50
+	"currentFilePath.priorityInStatusBar": 50,
+	"git.suggestSmartCommit": false
 }

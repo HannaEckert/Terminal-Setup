@@ -42,20 +42,15 @@
 	},
 
 	// Expand / Contract the current view
-	{ // Expand
+	{
 		"key": "space z",
-		"command": "workbench.action.minimizeOtherEditors",
-		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
-	},
-	{ // Contract
-		"key": "space shift+z",
-		"command": "workbench.action.evenEditorWidths",
+		"command": "workbench.action.toggleEditorWidths",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
 	{ // Comment line
 		"key": "space c",
-		"command": "editor.action.commentLine",
+		"command": "cfml.toggleLineComment",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 
@@ -87,7 +82,7 @@
 		"when": "viewContainer.workbench.view.explorer.enabled && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Global Search
-		"key": "space shift+7",
+		"key": "space /",
 		"command": "workbench.action.findInFiles",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
@@ -153,22 +148,17 @@
 		"command": "editor.action.triggerSuggest",
 		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
-	{ // Select next suggestion
-		"key": "shift+tab",
-		"command": "selectNextSuggestion",
-		"when": "suggestWidgetVisible"
-	},
-	{ // Select next quick open item
-		"key": "tab",
-		"command": "workbench.action.quickOpenSelectNext",
-		"when": "inQuickInput && !inEditorsPicker"
-	},
 
-	// Change navigation
+	// Change navigation diffEditor.switchSide
+	{ // Diff editor switch side
+		"key": "space o",
+		"command": "diffEditor.switchSide",
+		"when": "textCompareEditorVisible &&!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
 	{ // Go to next change in diff view
 		"key": "space oem_comma",
 		"command": "workbench.action.compareEditor.nextChange",
-		"when": "textCompareEditorVisible&&!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+		"when": "textCompareEditorVisible &&!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Go to next change in regular editor
 		"key": "space oem_comma",
@@ -237,14 +227,34 @@
 	},
 
 	// Create and navigate panes
-	{ // Split editor vertically
-		"key": "space v",
+	{ // Split editor horizontally
+		"key": "space s",
 		"command": "workbench.action.splitEditor",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
-	{ // Split editor horizonally
-		"key": "space s",
+	{ // Split editor vertically
+		"key": "space v",
 		"command": "workbench.action.splitEditorDown",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Focus left editor group
+		"key": "ctrl+h",
+		"command": "workbench.action.focusLeftGroup",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Focus below editor group
+		"key": "ctrl+j",
+		"command": "workbench.action.focusBelowGroup",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Focus above editor group
+		"key": "ctrl+k",
+		"command": "workbench.action.focusAboveGroup",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Focus right editor group
+		"key": "ctrl+l",
+		"command": "workbench.action.focusRightGroup",
 		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	},
 	{ // Focus left editor group
@@ -292,5 +302,48 @@
 		"key": "space r",
 		"command": "mssql.runQuery",
 		"when": "editorTextFocus && editorLangId == 'sql' && !inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+
+	// Harpoon Settings
+	{ // Mark files
+		"key": "space a",
+		"command": "vscode-harpoon.addEditor",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Quick pick
+		"key": "space q",
+		"command": "vscode-harpoon.editorQuickPick",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{ // Show list
+		"key": "space w",
+		"command": "vscode-harpoon.editEditors",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	// Focus on file 1-5
+	{
+		"key": "space 1",
+		"command": "vscode-harpoon.gotoEditor1",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{
+		"key": "space 2",
+		"command": "vscode-harpoon.gotoEditor2",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{
+		"key": "space 3",
+		"command": "vscode-harpoon.gotoEditor3",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{
+		"key": "space 4",
+		"command": "vscode-harpoon.gotoEditor4",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
+	},
+	{
+		"key": "space 5",
+		"command": "vscode-harpoon.gotoEditor5",
+		"when": "!inQuickInput && !inQuickOpen && !inputBoxFocus && neovim.mode != insert && !renameInputFocused && !terminalFocusInAny && !(sideBarFocus && inputFocus)"
 	}
 ]
