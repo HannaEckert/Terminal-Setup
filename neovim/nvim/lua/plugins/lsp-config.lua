@@ -26,17 +26,6 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			vim.filetype.add({
-				extension = {
-					cfm = "cfml",
-					cfc = "cfml",
-					cfs = "cfml",
-					bxm = "boxlang",
-					bx = "boxlang",
-					bxs = "boxlang",
-				},
-			})
-
 			local lspconfig = require("lspconfig")
 			local configs = require("lspconfig.configs")
 
@@ -47,9 +36,6 @@ return {
 						cmd = { vim.fn.stdpath("config") .. "/cfmlsp/lsp" },
 						root_dir = lspconfig.util.root_pattern(".git", ".config"),
 						filetypes = { "cfml" },
-						on_attach = function()
-							vim.cmd("silent set syntax=cf")
-						end,
 						on_new_config = function(new_config, new_root_dir)
 							local configPath = vim.fn.stdpath("config") .. "/cfmlsp/profile.xml"
 							local targetConfigPath = new_root_dir .. "/.cfmlsp"
@@ -61,8 +47,8 @@ return {
 									location = ".cfmlsp",
 								},
 								globalStoragePath = {
-									uri = targetConfigPath
-								}
+									uri = targetConfigPath,
+								},
 							}
 
 							-- Copy default profile.xml if it doesn't exist yet
@@ -84,9 +70,6 @@ return {
 						cmd = { vim.fn.stdpath("config") .. "/boxlsp/lsp" },
 						root_dir = lspconfig.util.root_pattern(".git", ".config"),
 						filetypes = { "boxlang" },
-						on_attach = function()
-							vim.cmd("silent set syntax=cf")
-						end,
 					},
 				}
 			end
