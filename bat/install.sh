@@ -7,7 +7,7 @@ sudo apt install bat
 
 echo "Installing the Catppuccin Frappe theme"
 mkdir -p "$(batcat --config-dir)/themes"
-cp "Catppuccin Frappe.tmTheme" $(batcat --config-dir)/themes
+cp "$currentDirectory/Catppuccin\ Frappe.tmTheme" $(batcat --config-dir)/themes
 
 batcat cache --build
 
