@@ -30,6 +30,22 @@ vim.o.cursorline = false
 vim.o.termguicolors = true
 vim.o.updatetime = 50
 
+-- Configure the wsl system clipboard
+if vim.fn.has("wsl") == 1 then
+	vim.g.clipboard = {
+		name = 'WslClipboard',
+		copy = {
+			['+'] = 'clip.exe',
+			['*'] = 'clip.exe',
+		},
+		paste = {
+			['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+		},
+		cache_enabled = 0,
+	}
+end
+
 -- Use the system clipboard if available
 if vim.fn.has("clipboard") == 1 then
 	vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
