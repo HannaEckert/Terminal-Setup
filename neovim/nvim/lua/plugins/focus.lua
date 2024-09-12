@@ -15,6 +15,6 @@ return {
 		-- Initially disable this feature
 		vim.cmd("silent FocusDisable")
 
-		vim.keymap.set({ "n", "v" }, "<leader>z", "<cmd>FocusToggle<cr><cmd>FocusMaximise<cr>", { silent = true })
+		vim.keymap.set({ "n", "v" }, "<leader>wf", "<cmd>FocusToggle<cr><cmd>FocusMaximise<cr>", { silent = true })
 	end,
 }

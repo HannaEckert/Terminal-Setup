@@ -17,9 +17,15 @@ return {
 					end,
 				},
 			},
+			window = {
+				mappings = {
+					["<leader>se"] = "close_window",
+					["<BS>"] = "close_window",
+					["<Esc>"] = "close_window",
+				}
+			}
 		})
 
-		vim.keymap.set("n", "<leader>e", ":Neotree reveal left %:p:h:h %:p<CR>")
-		vim.keymap.set("n", "<BS>", ":Neotree close<CR>")
+		vim.keymap.set("n", "<leader>se", ":Neotree toggle left %:p:h:h %:p<CR>")
 	end,
 }

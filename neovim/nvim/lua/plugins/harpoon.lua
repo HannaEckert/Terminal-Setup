@@ -7,7 +7,7 @@ return {
 		harpoon:setup()
 
 		vim.keymap.set({ "n", "v" }, "<leader>a", function() harpoon:list():add() end)
-		vim.keymap.set({ "n", "v" }, "<leader>w", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+		vim.keymap.set({ "n", "v" }, "<leader>fh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 		vim.keymap.set({ "n", "v" }, "<leader>1", function() harpoon:list():select(1) end)
 		vim.keymap.set({ "n", "v" }, "<leader>2", function() harpoon:list():select(2) end)

@@ -12,8 +12,8 @@ vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>", { noremap = true, silent =
 vim.keymap.set("i", "jj", "<ESC>", { silent = true })
 
 -- Easy creation of panes
-vim.keymap.set({ "n", "v" }, "<leader>s", ":vsplit<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>v", ":split<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>ws", ":vsplit<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>wv", ":split<CR>", { silent = true })
 
 -- Easy navigation between panes
 vim.keymap.set({ "n", "v" }, "<leader>h", ":wincmd h<CR>", { silent = true })
@@ -31,5 +31,3 @@ vim.keymap.set({ "n", "v" }, "<leader>x", "<cmd>q<CR>", { silent = true })
 -- Remap up-down movement
 vim.keymap.set({ "n", "v" }, "<C-u>", "<C-u>zz", { silent = true })
 vim.keymap.set({ "n", "v" }, "<C-d>", "<C-d>zz", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>u", "<C-u>zz", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>d", "<C-d>zz", { silent = true })
