@@ -27,7 +27,8 @@ $currentDirectory/jetBrainsMono/install.sh
 # Simple packages
 sudo apt install \
 	curl \
-	fd-find \ 
+	fd-find \
+	ripgrep \
 	zsh-autosuggestions \ 
 	thefuck # Typo fixer
 	
