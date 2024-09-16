@@ -2,18 +2,18 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Disable the arrow keys
-vim.keymap.set({ "n", "i", "v" }, "<Up>", "<Nop>", { noremap = true, silent = true })
-vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>", { noremap = true, silent = true })
-vim.keymap.set({ "n", "i", "v" }, "<Left>", "<Nop>", { noremap = true, silent = true })
-vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>", { noremap = true, silent = true })
+-- Make the arrow keys resize splits
+vim.keymap.set({ "n", "i", "v" }, "<Up>", ":resize +2<CR>", { silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<Down>", ":resize -2<CR>", { silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<Left>", ":vertical resize -2<CR>", { silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<Right>", ":vertical resize +2<CR>", { silent = true })
 
 -- Escape input mode with 'jj'
 vim.keymap.set("i", "jj", "<ESC>", { silent = true })
 
 -- Easy creation of panes
-vim.keymap.set({ "n", "v" }, "<leader>ws", ":vsplit<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>wv", ":split<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>s", ":vsplit<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>v", ":split<CR>", { silent = true })
 
 -- Easy navigation between panes
 vim.keymap.set({ "n", "v" }, "<leader>h", ":wincmd h<CR>", { silent = true })
