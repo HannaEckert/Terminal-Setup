@@ -18,6 +18,12 @@ return {
 				inc_rename = false,
 				lsp_doc_border = false,
 			},
+			routes = {
+				{
+					view = "popup",
+					filter = { event = "msg_show", min_height = 5 },
+				},
+			},
 		})
 	end,
 }
