@@ -6,7 +6,7 @@ echo "Installing tmux"
 sudo apt install tmux
 
 echo "Setting the symlink"
-mkdir -p ~/.config/tmux/plugins/tmp
+mkdir -p ~/.config/tmux/plugins/tpm
 ln -sf $currentDirectory/tmux.conf ~/.config/tmux/
 
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
