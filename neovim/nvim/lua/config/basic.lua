@@ -48,9 +48,9 @@ if vim.fn.has("wsl") == 1 then
 end
 
 -- Use the system clipboard if available
-if vim.fn.has("clipboard") == 1 then
-	vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
-end
+-- if vim.fn.has("clipboard") == 1 then
+-- 	vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
+-- end
 
 -- Yank Highlighting
 vim.api.nvim_create_autocmd("TextYankPost", {
