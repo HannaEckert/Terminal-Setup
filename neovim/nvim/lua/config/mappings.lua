@@ -12,8 +12,8 @@ vim.keymap.set({ "n", "i", "v" }, "<Right>", "<esc>:silent! vertical resize +2<C
 vim.keymap.set("i", "jj", "<ESC>", { silent = true })
 
 -- Easy creation of panes
-vim.keymap.set({ "n", "v" }, "<leader>s", ":vsplit<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>v", ":split<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>ws", ":vsplit<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>wv", ":split<CR>", { silent = true })
 
 
 -- Yank into system register
