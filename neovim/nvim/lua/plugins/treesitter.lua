@@ -23,6 +23,7 @@ return {
 				pattern = { "*.cfm", "*.cfc", "*.cfs", "*.bxm", "*.bx", "*.bxs" },
 				callback = function()
 					vim.cmd("setlocal syntax=cf")
+					vim.o.signcolumn = "yes"
 				end,
 			})
 
