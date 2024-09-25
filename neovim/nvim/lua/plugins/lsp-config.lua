@@ -84,9 +84,16 @@ return {
 			lspconfig.remark_ls.setup({ capabilities = capabilities })
 			lspconfig.jdtls.setup({ capabilities = capabilities })
 
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>.", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references)
+			-- vim.keymap.set("n", "K", vim.lsp.buf.hover)
+			vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action)
+			vim.keymap.set("n", "gs", vim.lsp.buf.workspace_symbol)
+			vim.keymap.set("n", "<leader>K", vim.diagnostic.open_float)
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_next)
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_prev)
+			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
+			vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help)
 		end,
 	},
 }
