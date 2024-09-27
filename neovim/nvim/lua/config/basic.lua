@@ -31,6 +31,8 @@ vim.o.cursorline = false
 vim.o.termguicolors = true
 vim.o.updatetime = 50
 vim.o.laststatus = 3
+vim.o.fileformats = "dos,unix,mac"
+vim.o.fixendofline = false
 
 -- Configure the wsl system clipboard
 if vim.fn.has("wsl") == 1 then
