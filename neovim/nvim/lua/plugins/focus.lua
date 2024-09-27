@@ -9,6 +9,7 @@ return {
 			},
 			ui = {
 				cursorline = false,
+				signcolumn = false,
 			},
 		})
 
