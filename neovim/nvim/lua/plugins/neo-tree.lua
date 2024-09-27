@@ -20,8 +20,6 @@ return {
 			window = {
 				mappings = {
 					["<leader>se"] = "close_window",
-					["<BS>"] = "close_window",
-					["<Esc>"] = "close_window",
 				}
 			}
 		})
