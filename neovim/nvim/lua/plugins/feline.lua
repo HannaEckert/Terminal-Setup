@@ -5,11 +5,20 @@ return {
 			"kyazdani42/nvim-web-devicons",
 		},
 		config = function()
-			local components = require("catppuccin.groups.integrations.feline").get()
-			local lazyStatus = require("lazy.status")
+			local ctpFeline = require("catppuccin.groups.integrations.feline")
+			local frappe = require("catppuccin.palettes").get_palette("frappe")
 
-			-- Change the mode icon
-			components.active[1][1].provider = "  "
+			ctpFeline.setup({
+				assets = {
+					left_separator = " ",
+					right_separator = " ",
+					mode_icon = "",
+				},
+				sett = { bkg = frappe.base },
+			})
+
+			local components = ctpFeline.get()
+			local lazyStatus = require("lazy.status")
 
 			-- Component for lazy.nvim upgrades
 			table.insert(components.active[2], {
@@ -19,17 +28,15 @@ return {
 					return updates
 				end,
 				hl = {
-					fg = "#ea999c",
-					bg = "#232634",
-					style = "bold",
+					fg = frappe.maroon,
+					bg = frappe.base,
 				},
 			})
 
+			-- Disable the regular status line
 			vim.o.showmode = false
 
-			require("feline").setup({
-				components = components,
-			})
+			require("feline").setup({ components = components })
 		end,
 	},
 }
