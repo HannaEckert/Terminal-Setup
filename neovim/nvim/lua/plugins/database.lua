@@ -22,6 +22,6 @@ return {
 		vim.g.db_ui_show_database_icon = 1
 		vim.g.db_ui_use_nvim_notify = 1
 
-		vim.keymap.set({ "n", "v" }, "<leader>sd", ":DBUIToggle<cr>", { silent = true })
+		vim.keymap.set({ "n", "v" }, "<leader>sd", ":enew<cr>:DBUIToggle<cr>", { silent = true })
 	end,
 }
