@@ -7,8 +7,15 @@ return {
 
 		startify.section.top_buttons.val = {}
 		startify.section.mru.val = {}
+
 		startify.section.mru_cwd.val[2].val = function()
-			return "R e c e n t   F i l e s"
+			local recentFilesCount = #startify.section.mru_cwd.val[4].val()[1].val
+			local headline = "R e c e n t   F i l e s"
+			if recentFilesCount == 0 then
+				headline = "N o   " .. headline
+			end
+
+			return headline
 		end
 
 		startify.section.bottom_buttons.val = {
