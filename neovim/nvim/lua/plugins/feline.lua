@@ -33,6 +33,21 @@ return {
 				},
 			})
 
+			components.active[3][3].provider = function()
+				local filename = vim.fn.expand("%:t")
+				local previousDirectory = vim.fn.expand("%:h:t")
+				local extension = vim.fn.expand("%:e")
+
+				local present, icons = pcall(require, "nvim-web-devicons")
+				local icon = present and icons.get_icon(filename, extension) or "󰈔"
+
+				if filename == "" then
+					return " 󰹦 ..."
+				end
+
+				return " " .. icon .. " " .. previousDirectory .. "/" .. filename .. " "
+			end
+
 			-- Disable the regular status line
 			vim.o.showmode = false
 

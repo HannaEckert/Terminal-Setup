@@ -28,12 +28,6 @@ return {
 			command = "resize 25",
 		})
 
-		-- Close the DBUI on file open
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = "sql",
-			command = "DBUIClose",
-		})
-
 		-- Set a shortcut to open the DBUI
 		vim.keymap.set({ "n", "v" }, "<leader>sd", function()
 			-- Make the alpha dashboard disappear
