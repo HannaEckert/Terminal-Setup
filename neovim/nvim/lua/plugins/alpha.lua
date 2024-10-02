@@ -2,20 +2,42 @@ return {
 	"goolord/alpha-nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local dashboard = require("alpha.themes.dashboard")
-		local theme = require("alpha.themes.theta")
+		local alpha = require("alpha")
+		local startify = require("alpha.themes.startify")
 
-		theme.buttons.val = {
-			{ type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+		startify.section.top_buttons.val = {}
+		startify.section.mru.val = {}
+		startify.section.mru_cwd.val[2].val = function()
+			return "R e c e n t   F i l e s"
+		end
+
+		startify.section.bottom_buttons.val = {
 			{ type = "padding", val = 1 },
-			dashboard.button("e", "  New file", "<cmd>ene<CR>"),
-			dashboard.button("SPC f f", "󰈞  Find file"),
-			dashboard.button("SPC f g", "󰊄  Live grep"),
-			dashboard.button("c", "  Configuration", "<cmd>cd ~/.config/nvim/<CR><cmd>Neotree<CR>"),
-			dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<CR>"),
-			dashboard.button("q", "󰅚  Quit", "<cmd>qa<CR>"),
+			{
+				type = "text",
+				val = function()
+					return "S h o r t c u t s"
+				end,
+				opts = { hl = "SpecialComment", shrink_margin = false },
+			},
+			{ type = "padding", val = 1 },
+			{
+				type = "group",
+				val = {
+					startify.button("e", "                   New file", "<cmd>ene<CR>"),
+					startify.button("SPC f f", "           󰈞  Find file"),
+					startify.button("SPC f g", "           󰊄  Live grep"),
+					startify.button(
+						"c",
+						"                   Configuration",
+						"<cmd>cd ~/.config/nvim/<CR><cmd>Neotree<CR>"
+					),
+					startify.button("u", "                   Update plugins", "<cmd>Lazy sync<CR>"),
+					startify.button("q", "                 󰅚  Quit NVIM", ":qa<CR>"),
+				},
+			},
 		}
 
-		require("alpha").setup(theme.config)
+		alpha.setup(startify.config)
 	end,
 }
