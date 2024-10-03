@@ -4,6 +4,8 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			local configs = require("nvim-treesitter.configs")
+
+			---@class ParserInfo
 			local parserConfig = require("nvim-treesitter.parsers").get_parser_configs()
 
 			-- Add cfml and boxlang filetypes
@@ -33,7 +35,8 @@ return {
 					files = { "src/parser.c", "src/scanner.c" },
 					location = "cfml",
 				},
-				filetype = "cfml", -- Filetype in Neovim to associate with the parser
+				filetype = "cfml", -- Filetype in Neovim to associate with the parser,
+				maintainers = { "@ghedwards" },
 			}
 
 			configs.setup({
