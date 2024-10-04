@@ -17,6 +17,7 @@ return {
 
 			vim.keymap.set({ "n", "v" }, "<leader>fb", builtin.buffers)
 			vim.keymap.set({ "n", "v" }, "<leader>fh", builtin.help_tags)
+			vim.keymap.set({ "n", "v" }, "<leader>fm", builtin.keymaps)
 			vim.keymap.set({ "n", "v" }, "<leader>fc", builtin.git_status)
 		end,
 	},
