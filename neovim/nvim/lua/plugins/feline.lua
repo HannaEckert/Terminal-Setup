@@ -24,7 +24,7 @@ return {
 			table.insert(components.active[2], {
 				enabled = lazyStatus.has_updates,
 				provider = function()
-					local updates = lazyStatus.updates() .. " "
+					local updates = " " .. lazyStatus.updates() .. " "
 					return updates
 				end,
 				hl = {
