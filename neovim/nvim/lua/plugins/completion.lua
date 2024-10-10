@@ -14,6 +14,16 @@ return {
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-cmdline" },
 			{ "petertriho/cmp-git" },
+			{
+				"folke/lazydev.nvim",
+				ft = "lua",
+				opts = {
+					library = {
+						{ path = "luvit-meta/library", words = { "vim%.uv" } },
+					},
+				},
+			},
+			{ "Bilal2453/luvit-meta", lazy = true },
 		},
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
@@ -41,6 +51,7 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
+					{ name = "lazydev" },
 				}, {
 					{ name = "buffer" },
 				}),
