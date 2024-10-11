@@ -31,20 +31,19 @@ return {
 			{
 				type = "group",
 				val = {
-					startify.button("e", "                   New file", "<cmd>ene<CR>"),
-					startify.button("SPC f f", "           󰈞  Find file"),
-					startify.button("SPC f g", "           󰊄  Live grep"),
-					startify.button(
-						"c",
-						"                   Configuration",
-						"<cmd>cd ~/.config/nvim/<CR><cmd>Neotree<CR>"
-					),
-					startify.button("u", "                   Update plugins", "<cmd>Lazy sync<CR>"),
-					startify.button("q", "                 󰅚  Quit NVIM", ":qa<CR>"),
+					startify.button("e", "  New File", "<cmd>ene<cr>"),
+					startify.button("f", "󰈞  Find File", "<cmd>Telescope find_files<cr>"),
+					startify.button("g", "󰊄  Live Grep", "<cmd>Telescope live_grep_args<cr>"),
+					startify.button("o", "  Open Folder", "<cmd>Oil --float<cr>"),
+					{ type = "padding", val = 1 },
+					startify.button("c", "  Configuration", "<cmd>cd ~/.config/nvim/<cr><cmd>Oil --float<cr>"),
+					startify.button("u", "󰚰  Update Plugins", "<cmd>Lazy sync<cr>"),
+					startify.button("q", "󰅚  Quit Neovim", "<cmd>qa<cr>"),
 				},
 			},
 		}
 
+		startify.config.opts.margin = 5
 		alpha.setup(startify.config)
 	end,
 }
