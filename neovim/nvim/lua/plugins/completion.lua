@@ -28,7 +28,7 @@ return {
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 			require("luasnip.loaders.from_vscode").load_standalone({
-				path = "~/.local/share/snippets.code-snippets"
+				path = "~/.local/share/snippets.code-snippets",
 			})
 
 			local cmp = require("cmp")
@@ -83,8 +83,34 @@ return {
 				}, {
 					{ name = "cmdline" },
 				}),
-				matching = { disallow_symbol_nonprefix_matching = false },
+				matching = {
+					disallow_symbol_nonprefix_matching = false,
+					disallow_fuzzy_matching = false,
+					disallow_partial_matching = false,
+					disallow_fullfuzzy_matching = false,
+					disallow_prefix_unmatching = false,
+					disallow_partial_fuzzy_matching = false
+				},
 			})
+
+			-- Shortcuts for navigating within snippets
+			local ls = require("luasnip")
+
+			-- Jump cursor forward
+			vim.keymap.set({ "i", "s" }, "<C-l>", function()
+				ls.jump(1)
+			end, { silent = true })
+			vim.keymap.set({ "i", "s" }, "<C-j>", function()
+				ls.jump(1)
+			end, { silent = true })
+
+			-- Jump cursor back
+			vim.keymap.set({ "i", "s" }, "<C-h>", function()
+				ls.jump(-1)
+			end, { silent = true })
+			vim.keymap.set({ "i", "s" }, "<C-k>", function()
+				ls.jump(-1)
+			end, { silent = true })
 		end,
 	},
 }
