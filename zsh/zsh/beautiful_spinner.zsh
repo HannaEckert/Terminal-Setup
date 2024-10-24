@@ -1,3 +1,12 @@
+# Checkmark and error symbol
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+CLEAR="\e[0m"
+
+OK="${GREEN}󰸞$CLEAR"
+ERR="${RED}$CLEAR"
+
 # A beautiful spinner
 showProcessIdentifier() {
 	if [ -z $1 ] ; then
@@ -17,17 +26,17 @@ showProcessIdentifier() {
 		return 1
 	fi
 
-	echo -e " \e[32mo\e[0m ${verb}..."
+	echo -e " ${GREEN}o$CLEAR ${verb}..."
 	spin='⡆⠖⠲⢰⣠⣄' ; i=0
 	while kill -0 $pid 2>/dev/null ; do
 		i=$(( (i+1) %6 ))
-		echo -e "\e[1A\e[K \e[32m${spin:$i:1}\e[0m ${verb}..."
+		echo -e "\e[1A\e[K $YELLOW${spin:$i:1}$CLEAR ${verb}..."
 		sleep .1
 	done
 
 	if [ 0 = $? ] ; then
-		echo -e "\e[1A\e[K \e[32m✔\e[0m ${verb}..."
+		echo -e "\e[1A\e[K $OK ${verb}..."
 	else
-		echo -e "\e[1A\e[K \e[31m✘\e[0m ${verb}..."
+		echo -e "\e[1A\e[K $ERR ${verb}..."
 	fi
 }
