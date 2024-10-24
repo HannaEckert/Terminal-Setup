@@ -1,6 +1,6 @@
 # Follow a given file and do something once it changes
 function follow() {
-	# Check if given file exists	
+	# Check if given file exists
 	if [ -z $1 ] || [ ! -f $1 ] ; then
 		echo "USAGE: follow <file to watch> [<function to execute (\\\$file can be used)>]"
 		return 1
@@ -33,4 +33,3 @@ function follow() {
 		fi
 	done
 }
-
