@@ -53,7 +53,7 @@ return {
 
 			-- Quick actions
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format)
-			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
+			vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
 			vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action)
 		end,
 	},
