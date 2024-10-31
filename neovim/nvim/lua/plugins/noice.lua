@@ -1,6 +1,9 @@
 return {
 	"folke/noice.nvim",
-	dependencies = { "MunifTanjim/nui.nvim" },
+	dependencies = {
+		"MunifTanjim/nui.nvim",
+		"stevearc/dressing.nvim",
+	},
 	config = function()
 		require("noice").setup({
 			cmdline = { view = "cmdline" },
@@ -21,7 +24,7 @@ return {
 			routes = {
 				{
 					view = "popup",
-					filter = { event = "msg_show", min_height = 5 },
+					filter = { event = "msg_show", min_height = 3 },
 				},
 			},
 		})
