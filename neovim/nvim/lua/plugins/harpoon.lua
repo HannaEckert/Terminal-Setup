@@ -8,7 +8,6 @@ return {
 			local handle = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")
 			local defaultKey = "no-git"
 
-			print("GOT CALLED")
 			if handle then
 				local branch = handle:read("*a"):gsub("%s+", "")
 				branch = string.gsub(branch, "/", "_")
