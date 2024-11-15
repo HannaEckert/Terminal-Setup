@@ -29,6 +29,14 @@ return {
 				end,
 			})
 
+			-- treat *.code-snippets like json files
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+				pattern = "*.code-snippets",
+				callback = function()
+					vim.cmd("setlocal syntax=json")
+				end,
+			})
+
 			parserConfig.cfml = {
 				install_info = {
 					url = "https://github.com/cfmleditor/tree-sitter-cfml",
@@ -47,6 +55,7 @@ return {
 					"bash",
 					"markdown",
 					"xml",
+					"json",
 					"html",
 					"css",
 					"javascript",
