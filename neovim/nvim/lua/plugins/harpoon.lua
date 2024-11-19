@@ -22,20 +22,16 @@ return {
 		end
 
 		local harpoon = require("harpoon")
-		harpoon:setup({
-			settings = {
-				key = get_git_branch
-			}
-		})
+		harpoon:setup()
 
-		vim.keymap.set({ "n", "v" }, "<leader>a", function() harpoon:list():add() end)
-		vim.keymap.set({ "n", "v" }, "<leader>fa", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+		vim.keymap.set({ "n", "v" }, "<leader>a", function() harpoon:list(get_git_branch()):add() end)
+		vim.keymap.set({ "n", "v" }, "<leader>fa", function() harpoon.ui:toggle_quick_menu(harpoon:list(get_git_branch())) end)
 
-		vim.keymap.set({ "n", "v" }, "<leader>1", function() harpoon:list():select(1) end)
-		vim.keymap.set({ "n", "v" }, "<leader>2", function() harpoon:list():select(2) end)
-		vim.keymap.set({ "n", "v" }, "<leader>3", function() harpoon:list():select(3) end)
-		vim.keymap.set({ "n", "v" }, "<leader>4", function() harpoon:list():select(4) end)
-		vim.keymap.set({ "n", "v" }, "<leader>5", function() harpoon:list():select(5) end)
-		vim.keymap.set({ "n", "v" }, "<leader>6", function() harpoon:list():select(6) end)
+		vim.keymap.set({ "n", "v" }, "<leader>1", function() harpoon:list(get_git_branch()):select(1) end)
+		vim.keymap.set({ "n", "v" }, "<leader>2", function() harpoon:list(get_git_branch()):select(2) end)
+		vim.keymap.set({ "n", "v" }, "<leader>3", function() harpoon:list(get_git_branch()):select(3) end)
+		vim.keymap.set({ "n", "v" }, "<leader>4", function() harpoon:list(get_git_branch()):select(4) end)
+		vim.keymap.set({ "n", "v" }, "<leader>5", function() harpoon:list(get_git_branch()):select(5) end)
+		vim.keymap.set({ "n", "v" }, "<leader>6", function() harpoon:list(get_git_branch()):select(6) end)
 	end
 }
