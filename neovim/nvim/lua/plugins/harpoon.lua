@@ -33,5 +33,8 @@ return {
 		vim.keymap.set({ "n", "v" }, "<leader>4", function() harpoon:list(get_git_branch()):select(4) end)
 		vim.keymap.set({ "n", "v" }, "<leader>5", function() harpoon:list(get_git_branch()):select(5) end)
 		vim.keymap.set({ "n", "v" }, "<leader>6", function() harpoon:list(get_git_branch()):select(6) end)
+
+		vim.keymap.set({ "n", "v" }, "<leader>p", function() harpoon:list(get_git_branch()):prev() end)
+		vim.keymap.set({ "n", "v" }, "<leader>n", function() harpoon:list(get_git_branch()):next() end)
 	end
 }
