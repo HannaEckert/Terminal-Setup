@@ -36,7 +36,7 @@ vim.keymap.set({ "n", "v" }, "<leader><S-l>", ":wincmd <S-l><CR>", { silent = tr
 vim.keymap.set({ "n", "v" }, "<leader>x", "<cmd>q<CR>", { silent = true })
 
 -- Disable the find highlight
-vim.keymap.set({ "n", "v" }, "<leader>n", ":nohl<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader><leader>", ":nohl<CR>", { silent = true })
 
 -- Remap up-down movement
 vim.keymap.set({ "n", "v" }, "<C-u>", "<C-u>zz", { silent = true })
