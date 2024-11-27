@@ -5,7 +5,7 @@ return {
 		require("focus").setup({
 			autoresize = {
 				minwidth = 20,
-				minheight = 20,
+				minheight = 6,
 			},
 			ui = {
 				cursorline = false,
