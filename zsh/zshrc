@@ -2,11 +2,14 @@ PATH="$PATH:$HOME/.local/bin:/snap/bin"
 CONFIG_PATH="$HOME/.config/zsh"
 JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac))))
 
+function zvm_after_init() {
+	source $CONFIG_PATH/fzf_setup.zsh
+}
+
 source $CONFIG_PATH/aliases.zsh
 source $CONFIG_PATH/vim_bindings.zsh
 source $CONFIG_PATH/custom_extras.zsh
 source $CONFIG_PATH/long_history.zsh
-source $CONFIG_PATH/fzf_setup.zsh
 source $CONFIG_PATH/beautiful_spinner.zsh
 source $CONFIG_PATH/tools.zsh
 source $CONFIG_PATH/follow.zsh
