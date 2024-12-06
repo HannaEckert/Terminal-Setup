@@ -31,4 +31,4 @@ _fzf_comprun() {
 }
 
 source ~/.local/share/fzf-git/fzf-git.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.fzf.zsh

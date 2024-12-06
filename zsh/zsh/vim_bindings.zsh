@@ -4,6 +4,9 @@ function zvm_config() {
   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
   ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 }
+
+# Plugin to enhance the vim bindings for zsh
+ZVM_INIT_MODE=sourcing
 source $CONFIG_PATH/zsh_vi_mode.zsh
 
 # Tmux Pane Navigation
@@ -33,5 +36,4 @@ bindkey -M vicmd ' l' tmux_right
 
 bindkey -M vicmd ' v' tmux_split_horizontal
 bindkey -M vicmd ' s' tmux_split_vertical
-
 
