@@ -4,17 +4,17 @@
 
 [core]
 	editor = /snap/bin/nvim
-	pager = delta
-
-[interactive]
-	diffFilter = delta --color-only
-
-[delta]
-	navigate = true
-	side-by-side = true
 
 [merge]
 	conflictstyle = diff3
 
+[difftool]
+    prompt = true
+
 [diff]
-	colorMoved = default
+    tool = nvimdiff
+
+[difftool "nvimdiff"]
+    cmd = "/snap/bin/nvim -d \"$LOCAL\" \"$REMOTE\""
+
+

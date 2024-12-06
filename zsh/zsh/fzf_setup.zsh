@@ -30,5 +30,4 @@ _fzf_comprun() {
 	esac
 }
 
-source ~/.local/share/fzf-git/fzf-git.sh
 source ~/.fzf.zsh
