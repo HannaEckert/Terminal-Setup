@@ -3,18 +3,19 @@
 	email = eckerthanna@icloud.com
 
 [core]
+	autocrlf = input
+	eol = lf
 	editor = /snap/bin/nvim
 
 [merge]
-	conflictstyle = diff3
+	tool = nvimdiff
 
-[difftool]
-    prompt = true
+[mergetool]
+	prompt = false
 
 [diff]
     tool = nvimdiff
 
-[difftool "nvimdiff"]
-    cmd = "/snap/bin/nvim -d \"$LOCAL\" \"$REMOTE\""
-
+[difftool]
+	prompt = false
 
