@@ -36,6 +36,7 @@ return {
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
 			vim.keymap.set("n", "gr", vim.lsp.buf.references)
 			vim.keymap.set("n", "gs", vim.lsp.buf.workspace_symbol)
+			vim.keymap.set("n", "gt", vim.lsp.buf.type_definition)
 
 			-- Jumping betwen diagnostics
 			vim.keymap.set("n", "[d", function() -- previous
