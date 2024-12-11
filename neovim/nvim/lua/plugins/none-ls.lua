@@ -11,6 +11,7 @@ return {
 				sources = {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.prettier,
+					null_ls.builtins.formatting.sql_formatter,
 					require("none-ls.diagnostics.eslint"),
 				},
 			})
@@ -25,7 +26,13 @@ return {
 		},
 		config = function()
 			require("mason-null-ls").setup({
-				ensure_installed = { "stylua", "jq", "eslint_d" },
+				ensure_installed = {
+					"stylua",
+					"jq",
+					"eslint_d",
+					"sql-formatter",
+				},
+				automatic_installation = true,
 			})
 		end,
 	},
