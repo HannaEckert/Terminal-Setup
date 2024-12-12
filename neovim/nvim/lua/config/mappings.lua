@@ -33,8 +33,8 @@ vim.keymap.set({ "n", "v" }, "<leader><S-k>", ":wincmd <S-k><CR>", { silent = tr
 vim.keymap.set({ "n", "v" }, "<leader><S-l>", ":wincmd <S-l><CR>", { silent = true })
 
 -- Easy close file or editor
-vim.keymap.set({ "n", "v" }, "<leader>q", "<cmd>:q<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>Q", "<cmd>:qa<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>q", "<cmd>:wq<CR>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>Q", "<cmd>:wqa<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>x", "<cmd>:bp<CR><cmd>:bd #<CR>", { silent = true })
 
 -- Disable the find highlight
