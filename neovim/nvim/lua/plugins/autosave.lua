@@ -2,17 +2,18 @@ return {
 	"okuuva/auto-save.nvim",
 	event = { "InsertLeave", "TextChanged" },
 	opts = {
-		condition = function(buf)
-			local fn = vim.fn
-			local utils = require("auto-save.utils.data")
-
+		condition = function()
 			if
-				fn.getbufvar(buf, "&modifiable") == 1
-				-- change here is adding harpoon file type to exclusion list
-				and utils.not_in(fn.getbufvar(buf, "&filetype"), { "harpoon" })
+				vim.o.modifiable
+				and vim.o.modified
+				-- disable autosave for the harpoon quick edit window
+				and vim.o.filetype ~= "harpoon"
+				-- disable autosave when dadbod-ui is active
+				and not (vim.g.loaded_dbui and vim.api.nvim_buf_get_name(0):find("^/tmp/nvim."))
 			then
 				return true
 			end
+
 			return false
 		end,
 	},
