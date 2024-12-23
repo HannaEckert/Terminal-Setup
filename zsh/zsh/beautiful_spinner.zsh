@@ -27,9 +27,25 @@ showProcessIdentifier() {
 	fi
 
 	echo -e " ${GREEN}o$CLEAR ${verb}..."
-	spin='⡆⠖⠲⢰⣠⣄' ; i=0
+
+	# Moon spinner (Nerd Font)
+	spin=''
+
+	# Circle spinner (Nerd Font)
+	# spin='󰪞󰪟󰪠󰪡󰪢󰪣󰪤󰪥'
+
+	# Hex spinner (Nerd Font)
+	# spin='󰫃󰫄󰫅󰫆󰫇󰫈'
+
+	# Hourglass spinner (Nerd Font)
+	# spin=''
+
+	# Simple ascii spinner
+	# spin='⡆⠖⠲⢰⣠⣄' 
+	
+	i=0
 	while kill -0 $pid 2>/dev/null ; do
-		i=$(( (i+1) %6 ))
+		i=$(( (i+1) %${#spin} ))
 		echo -e "\e[1A\e[K $YELLOW${spin:$i:1}$CLEAR ${verb}..."
 		sleep .1
 	done
