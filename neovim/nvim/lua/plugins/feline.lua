@@ -12,7 +12,7 @@ return {
 				assets = {
 					left_separator = " ",
 					right_separator = " ",
-					mode_icon = "",
+					mode_icon = "",
 				},
 				sett = { bkg = frappe.base },
 			})
