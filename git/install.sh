@@ -7,5 +7,6 @@ sudo apt install git
 
 echo "Setting the .gitconfig symlink"
 ln -sf $currentDirectory/gitconfig ~/.gitconfig
+cp $currentDirectory/gituserconfig ~/.gituserconfig
 
 exit 0

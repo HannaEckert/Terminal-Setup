@@ -1,6 +1,5 @@
-[user]
-	name = Hanna Eckert
-	email = eckerthanna@icloud.com
+[include]
+    path = .gituserconfig
 
 [core]
 	autocrlf = input
