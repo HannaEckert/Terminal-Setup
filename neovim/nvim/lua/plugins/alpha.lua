@@ -5,6 +5,12 @@ return {
 		local alpha = require("alpha")
 		local startify = require("alpha.themes.startify")
 
+		startify.section.header.val = {
+			[[     ░▒▓██████▓▒░   ]],
+			[[    ░▒▓█▓▒  ▒▓█▓▒░  ]],
+			[[    ░▒▓█▓▒  ▒▓█▓▒░  ]],
+			[[     ░▒▓██████▓▒░   ]]
+		}
 		startify.section.top_buttons.val = {}
 		startify.section.mru.val = {}
 
