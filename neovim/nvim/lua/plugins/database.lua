@@ -29,13 +29,16 @@ return {
 		})
 
 		-- Set a shortcut to open the DBUI
-		vim.keymap.set({ "n", "v" }, "<leader>sd", function()
+		vim.keymap.set({ "n", "v" }, "<leader>fd", function()
 			-- Make the alpha dashboard disappear
 			if vim.bo.filetype == "alpha" then
 				vim.cmd("enew")
 			end
 
 			vim.cmd("DBUIToggle")
+			vim.keymap.set({ "n", "v" }, "<leader>S", "<Plug>(DBUI_ExecuteQuery)")
+			vim.keymap.set({ "v" }, "<leader>s", "<Plug>(DBUI_ExecuteQuery)")
+			vim.keymap.set({ "n" }, "<leader>s", "vip<Plug>(DBUI_ExecuteQuery)<esc>")
 		end, { silent = true })
 	end,
 }
