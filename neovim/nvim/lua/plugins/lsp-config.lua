@@ -48,7 +48,7 @@ return {
 
 			-- Show info
 			vim.keymap.set("n", "gl", vim.lsp.buf.list_workspace_folders)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover)
+			vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover)
 			vim.keymap.set("n", "<leader>K", vim.diagnostic.open_float)
 			vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
 
