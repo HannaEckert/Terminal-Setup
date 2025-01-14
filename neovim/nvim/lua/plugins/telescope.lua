@@ -42,6 +42,17 @@ return {
 							["<C-a>"] = actions.select_vertical,
 						},
 					},
+					preview = {
+						filesize_limit = 2,
+						timeout = 100,
+						filetype_hook = function(filepath)
+							if filepath:find(".min.js$") or filepath:find(".min.css$") then
+								return false
+							end
+
+							return true
+						end,
+					},
 				},
 			})
 
