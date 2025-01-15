@@ -29,11 +29,19 @@ return {
 			end,
 		})
 
-		-- treat *.code-snippets like json files
+		-- Treat *.code-snippets like json files
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 			pattern = "*.code-snippets",
 			callback = function()
 				vim.cmd("setlocal syntax=json")
+			end,
+		})
+
+		-- Enable spell-checking within markdown files per default
+		vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+			pattern = "*.md",
+			callback = function()
+				vim.cmd("setlocal spell spelllang=en")
 			end,
 		})
 
