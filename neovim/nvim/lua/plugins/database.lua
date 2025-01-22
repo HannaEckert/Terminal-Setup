@@ -21,6 +21,7 @@ return {
 		vim.g.db_ui_use_nerd_fonts = 1
 		vim.g.db_ui_show_database_icon = 1
 		vim.g.db_ui_use_nvim_notify = 1
+		vim.g.db_ui_execute_on_save = 0
 
 		-- Make the dbout window a resonable size
 		vim.api.nvim_create_autocmd("FileType", {
