@@ -22,7 +22,11 @@ return {
 		end
 
 		local harpoon = require("harpoon")
-		harpoon:setup()
+		harpoon:setup({
+			settings = {
+				save_on_toggle = true,
+			},
+		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>a", function() harpoon:list(get_git_branch()):add() end)
 		vim.keymap.set({ "n", "v" }, "<leader>fa", function() harpoon.ui:toggle_quick_menu(harpoon:list(get_git_branch())) end)
