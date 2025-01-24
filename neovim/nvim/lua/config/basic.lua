@@ -34,6 +34,10 @@ vim.o.laststatus = 3
 vim.o.fileformats = "dos,unix,mac"
 vim.o.fixendofline = false
 
+-- Code Folding
+vim.o.foldmethod = "indent"
+vim.o.foldlevelstart = 100
+
 -- Configure the wsl system clipboard
 if vim.fn.has("wsl") == 1 then
 	vim.g.clipboard = {
