@@ -37,6 +37,12 @@ vim.o.fixendofline = false
 -- Code Folding
 vim.o.foldmethod = "indent"
 vim.o.foldlevelstart = 100
+vim.opt.fillchars:append({fold = " "})
+function _G.MyFoldText()
+	local lineCount = vim.v.foldend - vim.v.foldstart + 1
+	return "󰐕 " .. lineCount
+end
+vim.opt.foldtext = "v:lua.MyFoldText()"
 
 -- Configure the wsl system clipboard
 if vim.fn.has("wsl") == 1 then
