@@ -16,7 +16,6 @@ $currentDirectory/git/install.sh && \
 $currentDirectory/lazygit/install.sh && \
 $currentDirectory/lazydocker/install.sh && \
 $currentDirectory/tmux/install.sh && \
-$currentDirectory/vscode/install.sh && \
 $currentDirectory/neovim/install.sh && \
 $currentDirectory/jetBrainsMono/install.sh
 
