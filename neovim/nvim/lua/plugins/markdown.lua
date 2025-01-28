@@ -8,11 +8,9 @@ return {
 		config = function()
 			require("render-markdown").setup({
 				heading = {
-					icons = { " ", " ", " ", " ", "󱁇 " ,"󱁄 "},
+					icons = { "  " },
 					position = "inline",
-					width = "block",
-					min_width = 80,
-					left_pad = 2,
+					backgrounds = {},
 				},
 			})
 
