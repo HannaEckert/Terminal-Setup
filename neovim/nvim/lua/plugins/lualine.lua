@@ -48,10 +48,10 @@ return {
 				},
 				sections = {
 					lualine_a = {},
-					lualine_b = { { function() return "" end } },
+					lualine_b = { { function() return "" end }, "location" },
 					lualine_c = { "diff", "diagnostics" },
 					lualine_x = { "mason", "lazy" },
-					lualine_y = { filename_with_icon, "branch", "location" },
+					lualine_y = { filename_with_icon, "branch" },
 					lualine_z = {},
 				},
 			})
