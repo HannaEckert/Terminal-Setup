@@ -52,14 +52,14 @@ return {
 
 			-- Show info
 			vim.keymap.set("n", "gl", vim.lsp.buf.list_workspace_folders)
-			vim.keymap.set("n", "gK", vim.lsp.buf.hover)
-			vim.keymap.set("n", "<leader>K", vim.diagnostic.open_float)
-			vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
+			vim.keymap.set("n", "gK", function() vim.lsp.buf.hover({ border = "rounded" }) end)
+			vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float({ border = "rounded" }) end)
+			vim.keymap.set({ "n", "i" }, "<C-k>", function() vim.lsp.buf.signature_help({ border = "rounded" }) end)
 
 			-- Quick actions
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format)
 			vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
-			vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action)
+			vim.keymap.set("n", "<leader>.", function() vim.lsp.buf.code_action({ border = "rounded" }) end)
 		end,
 	},
 	{
