@@ -29,6 +29,16 @@ return {
 				color = { fg = catppuccin.yellow },
 			}
 
+			-- Info that a macro is recording
+			local is_recording = {
+				function()
+				  local reg = vim.fn.reg_recording()
+				  if reg == "" then return "" end -- not recording
+				  return "󰻃 -> " .. reg
+				end,
+				color = { fg = catppuccin.red },
+			}
+
 			-- Removing the background from section b and y
 			theme.normal.b.bg = catppuccin.base
 			theme.insert.b.bg = catppuccin.base
@@ -49,7 +59,7 @@ return {
 				sections = {
 					lualine_a = {},
 					lualine_b = { { function() return "" end }, "location" },
-					lualine_c = { "diff", "diagnostics" },
+					lualine_c = { "diff", "diagnostics", is_recording },
 					lualine_x = { "mason", "lazy" },
 					lualine_y = { filename_with_icon, "branch" },
 					lualine_z = {},
