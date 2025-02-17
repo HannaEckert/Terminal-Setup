@@ -100,3 +100,8 @@ dynamicObject
 eventContentProfile
 lualine
 AjaxLink
+selSiteId
+HtmlUtil
+SubscriptionManager
+reinit
+appSettingSelection

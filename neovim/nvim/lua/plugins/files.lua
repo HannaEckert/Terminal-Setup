@@ -8,6 +8,6 @@ return {
 				["q"] = "actions.close",
 			}
 		})
-		vim.keymap.set("n", "<leader>fo", ":Oil --float %:p:h:h %:p<CR>")
+		vim.keymap.set("n", "<leader>fo", ":Oil --float %:p:h %:p<CR>")
 	end,
 }
