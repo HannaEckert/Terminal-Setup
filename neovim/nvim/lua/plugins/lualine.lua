@@ -9,6 +9,7 @@ return {
 			local lualine = require("lualine")
 			local catppuccin = require("catppuccin.palettes").get_palette("frappe")
 			local theme = require("lualine.themes.catppuccin-frappe")
+			local lazyStatus = require("lazy.status")
 
 			-- Component for filename with icon
 			local filename_with_icon = {
@@ -29,12 +30,23 @@ return {
 				color = { fg = catppuccin.yellow },
 			}
 
+			-- Component for lazy.nvim updates
+			local lazy_updates = {
+				function()
+					return " " .. lazyStatus.updates() .. " "
+				end,
+				cond = lazyStatus.has_updates,
+				color = { fg = catppuccin.maroon },
+			}
+
 			-- Info that a macro is recording
 			local is_recording = {
 				function()
-				  local reg = vim.fn.reg_recording()
-				  if reg == "" then return "" end -- not recording
-				  return "󰻃 -> " .. reg
+					local reg = vim.fn.reg_recording()
+					if reg == "" then
+						return ""
+					end -- not recording
+					return "󰻃 -> " .. reg
 				end,
 				color = { fg = catppuccin.red },
 			}
@@ -49,6 +61,7 @@ return {
 
 			-- Lualine setup
 			lualine.setup({
+				extensions = { "lazy", "mason", "oil" },
 				options = {
 					theme = theme,
 					section_separators = { left = " ", right = " " },
@@ -58,10 +71,14 @@ return {
 				},
 				sections = {
 					lualine_a = {},
-					lualine_b = { { function() return "" end }, "location" },
+					lualine_b = { {
+						function()
+							return ""
+						end,
+					}, "location" },
 					lualine_c = { "diff", "diagnostics", is_recording },
-					lualine_x = { "mason", "lazy" },
-					lualine_y = { filename_with_icon, "branch" },
+					lualine_x = {},
+					lualine_y = { lazy_updates, filename_with_icon, "branch" },
 					lualine_z = {},
 				},
 			})
