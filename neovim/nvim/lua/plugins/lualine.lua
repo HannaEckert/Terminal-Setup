@@ -33,7 +33,7 @@ return {
 			-- Component for lazy.nvim updates
 			local lazy_updates = {
 				function()
-					return " " .. lazyStatus.updates() .. " "
+					return lazyStatus.updates() .. " "
 				end,
 				cond = lazyStatus.has_updates,
 				color = { fg = catppuccin.maroon },
@@ -78,7 +78,7 @@ return {
 					}, "location" },
 					lualine_c = { "diff", "diagnostics", is_recording },
 					lualine_x = {},
-					lualine_y = { lazy_updates, filename_with_icon, "branch" },
+					lualine_y = { filename_with_icon, lazy_updates, "branch" },
 					lualine_z = {},
 				},
 			})
