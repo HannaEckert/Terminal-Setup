@@ -4,6 +4,7 @@ currentDirectory=$(cd $(dirname "$0") >/dev/null 2>&1; pwd -P)
 
 echo "Installing neovim"
 sudo apt install snapd
+sudo snap set system experimental.hidden-snap-folder=true
 sudo snap install --classic nvim
 sudo apt install golang-go
 sudo apt install nodejs
