@@ -49,7 +49,7 @@ return {
 			["b"] = { fg = "#e5c890" }, -- yellow
 		}, {
 			[[ a ]],
-			[[    a   a   b    a   a   a    ]],
+			[[    a   a   bb   a   a   a    ]],
 		})
 
 		startify.section.top_buttons.val = {}
