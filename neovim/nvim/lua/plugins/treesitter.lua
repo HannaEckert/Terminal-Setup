@@ -76,6 +76,7 @@ return {
 			modules = {},
 			ignore_install = {},
 			ensure_installed = {
+				"query",
 				"lua",
 				"bash",
 				"markdown",
@@ -94,10 +95,7 @@ return {
 			},
 			sync_install = false,
 			auto_install = true,
-			highlight = {
-				enable = true,
-				disable = { "cfml", "cfhtml", "cfscript" },
-			},
+			highlight = { enable = true },
 			indent = { enable = true },
 			textobjects = { enable = true },
 		})
