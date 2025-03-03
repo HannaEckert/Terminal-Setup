@@ -17,24 +17,8 @@ return {
 				bxm = "boxlang",
 				bx = "boxlang",
 				bxs = "boxlang",
+				["code-snippets"] = "json",
 			},
-		})
-
-		-- Setup syntax highlighting
-		vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-			pattern = { "*.cfm", "*.cfc", "*.cfs", "*.bxm", "*.bx", "*.bxs" },
-			callback = function()
-				vim.cmd("setlocal syntax=cf")
-				vim.o.signcolumn = "yes"
-			end,
-		})
-
-		-- Treat *.code-snippets like json files
-		vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-			pattern = "*.code-snippets",
-			callback = function()
-				vim.cmd("setlocal syntax=json")
-			end,
 		})
 
 		-- Enable spell-checking within markdown files per default
@@ -54,22 +38,12 @@ return {
 			filetype = "cfml",
 		}
 
-		parserConfig.cfhtml = {
-			install_info = {
-				url = "https://github.com/cfmleditor/tree-sitter-cfml",
-				files = { "src/parser.c", "src/scanner.c" },
-				location = "cfhtml",
-			},
-			filetype = "cfml",
-		}
-
 		parserConfig.cfscript = {
 			install_info = {
 				url = "https://github.com/cfmleditor/tree-sitter-cfml",
 				files = { "src/parser.c", "src/scanner.c" },
 				location = "cfscript",
 			},
-			filetype = "cfml",
 		}
 
 		configs.setup({
@@ -87,7 +61,6 @@ return {
 				"javascript",
 				"java",
 				"cfml",
-				"cfhtml",
 				"cfscript",
 				"dockerfile",
 				"gitcommit",
