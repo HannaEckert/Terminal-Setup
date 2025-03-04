@@ -23,6 +23,9 @@
 ; Function and method definitions
 ;--------------------------------
 
+
+(cf_function (cf_tag_open) @type)
+
 (function_expression
   name: (identifier) @function) @definition.function
 

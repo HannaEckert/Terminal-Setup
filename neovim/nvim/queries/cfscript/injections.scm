@@ -1,1 +1,2 @@
-(ERROR _ @injection.content (#set! injection.language "cfml"))
+; ((ERROR) @injection.content (#set! injection.language "cfml")) 
+

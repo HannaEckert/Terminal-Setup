@@ -12,8 +12,8 @@ return {
 		vim.filetype.add({
 			extension = {
 				cfm = "cfml",
-				cfc = "cfml",
-				cfs = "cfml",
+				cfc = "cfscript",
+				cfs = "cfscript",
 				bxm = "boxlang",
 				bx = "boxlang",
 				bxs = "boxlang",
@@ -26,6 +26,17 @@ return {
 			pattern = "*.md",
 			callback = function()
 				vim.cmd("setlocal spell spelllang=en")
+			end,
+		})
+
+		vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+			pattern = "*.cfc",
+			callback = function(ev)
+				local result = tonumber(vim.fn.system("head -n10 '" .. ev.file .. "' | grep '<cfcomponent' | wc -l"))
+
+				if result > 0 then
+					vim.cmd("set filetype=cfml")
+				end
 			end,
 		})
 
@@ -44,6 +55,7 @@ return {
 				files = { "src/parser.c", "src/scanner.c" },
 				location = "cfscript",
 			},
+			filetype = "cfscript"
 		}
 
 		configs.setup({
