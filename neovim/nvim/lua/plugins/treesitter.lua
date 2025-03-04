@@ -70,7 +70,33 @@ return {
 			auto_install = true,
 			highlight = { enable = true },
 			indent = { enable = true },
-			textobjects = { enable = true },
+			textobjects = {
+				select = {
+					enable = true,
+					lookahead = true,
+					keymaps = {
+						["af"] = "@function.outer",
+						["if"] = "@function.inner",
+
+						["aa"] = "@assignment.outer",
+						["ia"] = "@assignment.inner",
+						["la"] = "@assignment.lhs",
+						["ra"] = "@assignment.rhs",
+
+						["ac"] = "@comment.outer",
+						["ic"] = "@comment.inner",
+
+						["as"] = "@spec.outer",
+						["is"] = "@spec.inner",
+
+						["at"] = "@test.outer",
+						["it"] = "@test.inner",
+					},
+					selection_modes = {
+						["@function.outer"] = "V",
+					},
+				},
+			},
 		})
 	end,
 }
