@@ -2,43 +2,130 @@
 (erroneous_end_tag_name) @tag.error
 (doctype) @constant
 (attribute_name) @attribute
-(attribute_value) @string
+(attribute_value) @operator
 (raw_text) @embedded
-(start_tag) @tag
-(end_tag) @tag
-(self_closing_tag) @tag
-(cf_selfclose_tag) @tag
-(cf_output_tag) @tag
+(start_tag) @module
+(end_tag) @module
+(self_closing_tag) @module
+(cf_selfclose_tag) @module
+(cf_selfclose_tag_end) @module
+(cf_output_tag) @module
+(cf_return) @module
+(cf_query) @module
+(cf_set_tag) @module
+(cf_transaction_tag) @module
+(cf_savecontent_tag) @module
+(cf_if_tag) @module
+(cf_loop) @module
+(binary_expression) @string
+(unary_operator) @string
+(cf_var) @keyword
 
 ; Variables
 ;----------
 
-(identifier) @variable
+(identifier) @keyword
+
+
+; cfarguments
+
+(cf_selfclose_tag 
+  (cf_attribute 
+	(cf_attribute_name) @_name (#eq? @_name "name")
+	(quoted_cf_attribute_value (attribute_value) @keyword )))
+
+(cf_selfclose_tag 
+  (cf_attribute 
+	(cf_attribute_name) @_name (#eq? @_name "type")
+	(quoted_cf_attribute_value (attribute_value) @type )))
 
 ; Properties
 ;-----------
 
-(property_identifier) @property
+(property_identifier) @variable
+
+; constructors with new
+
+(new_expression 
+  constructor: 
+    [(member_expression
+	  object: [(member_expression
+		object: [(member_expression
+		  object: [(member_expression
+		    object: [(member_expression
+		      object: [(member_expression
+		        object: [(member_expression
+		          object: [(member_expression
+		            object: [(member_expression
+		              object: [(member_expression
+			            property: (property_identifier) @type) (identifier) @type]?
+			          property: (property_identifier) @type) (identifier) @type]?
+			        property: (property_identifier) @type) (identifier) @type]?
+			      property: (property_identifier) @type) (identifier) @type]?
+			    property: (property_identifier) @type) (identifier) @type]?
+			  property: (property_identifier) @type) (identifier) @type]?
+		    property: (property_identifier) @type) (identifier) @type]?
+		  property: (property_identifier) @type) (identifier) @type]?
+		property: (property_identifier) @type) (identifier) @type]?
+	  property: (property_identifier) @type) (identifier) @type])
+
 
 ; Function and method definitions
 ;--------------------------------
 
+(cf_function 
+  (cf_tag_open 
+	(cf_attribute
+	  (cf_attribute_name) @_name (#eq? @_name "name")
+	  (quoted_cf_attribute_value 
+		(attribute_value) @keyword))))
 
-(cf_function (cf_tag_open) @type)
+(cf_function 
+  (cf_tag_open 
+	(cf_attribute
+	  (cf_attribute_name) @_name (#eq? @_name "access")
+	  (quoted_cf_attribute_value 
+		(attribute_value) @string (#eq? @string "public")))))
+
+(cf_function 
+  (cf_tag_open 
+	(cf_attribute
+	  (cf_attribute_name) @_name (#eq? @_name "access")
+	  (quoted_cf_attribute_value 
+		(attribute_value) @constant (#eq? @constant "private")))))
+
+
+(quoted_cf_attribute_value 
+  (attribute_value) @string (#eq? @string "true"))
+
+(quoted_cf_attribute_value 
+  (attribute_value) @constant (#eq? @constant "false"))
+
+
+(cf_function 
+  (cf_tag_open 
+	(cf_attribute
+	  (cf_attribute_name) @_name (#eq? @_name "returntype")
+	  (quoted_cf_attribute_value 
+		(attribute_value) @type))))
+
+(cf_component 
+  (cf_tag_open 
+	(cf_attribute
+	  (cf_attribute_name) @_name (#eq? @_name "extends")
+	  (quoted_cf_attribute_value 
+		(attribute_value) @type))))
+
+(cf_component (cf_tag_open) @module)
+(cf_component (cf_tag_close) @module)
+
+(cf_function (cf_tag_open) @module)
+(cf_function (cf_tag_close) @module)
+
 
 (function_expression
   name: (identifier) @function) @definition.function
 
-(cf_function 
-  (cf_tag_open
-    (cf_attribute
-        (cf_attribute_name) @attribute (#eq? @attribute "name")
-          (quoted_cf_attribute_value 
-            (attribute_value) @function
-          )
-    )
-  )
-) @definition.function
 
 (function_declaration
   name: (identifier) @function)
@@ -69,7 +156,9 @@
 
 (array) @expression
 
-(cf_set_tag) @tag
+(call_expression 
+  function: (member_expression 
+	property: (property_identifier) @function.macro))
 
 (assignment_expression
   left: (member_expression
@@ -108,7 +197,7 @@
     property: [
       (property_identifier)
       (private_property_identifier)
-    ] @function.method.call))
+    ] @function.macro))
 
 ; Literals
 ;---------
@@ -144,11 +233,11 @@
 (regex_flags) @character.special
 
 (regex
-  "/" @punctuation.bracket) ; Regex delimiters
+  "/" @module) ; Regex delimiters
 
 (number) @number
 
-(hash_expression) @function
+(hash_expression) @markup.math
 
 ((identifier) @number
   (#any-of? @number "NaN" "Infinity"))
@@ -162,14 +251,15 @@
   ":"
 ] @punctuation.delimiter
 
-(binary_expression
-  "/" @operator)
-
 (ternary_expression
   [
     "?"
     ":"
   ] @keyword.conditional.ternary)
+
+[
+  ">"
+] @module
 
 [
   "-"
@@ -189,7 +279,6 @@
   "<"
   "<="
   "<<"
-  "<<="
   "="
   "=="
   "==="
@@ -216,7 +305,7 @@
   "&&="
   "||="
   "??="
-] @operator
+] @string
 
 [
   "("

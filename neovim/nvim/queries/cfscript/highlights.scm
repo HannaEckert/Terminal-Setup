@@ -45,6 +45,55 @@
   function: (member_expression
     property: (property_identifier) @function.macro))
 
+
+; new expressions with constructor
+
+(formal_parameters 
+    (member_expression
+	  object: [(member_expression
+		object: [(member_expression
+		  object: [(member_expression
+		    object: [(member_expression
+		      object: [(member_expression
+		        object: [(member_expression
+		          object: [(member_expression
+		            object: [(member_expression
+		              object: [(member_expression
+			            property: (property_identifier) @type) (identifier) @type]?
+			          property: (property_identifier) @type) (identifier) @type]?
+			        property: (property_identifier) @type) (identifier) @type]?
+			      property: (property_identifier) @type) (identifier) @type]?
+			    property: (property_identifier) @type) (identifier) @type]?
+			  property: (property_identifier) @type) (identifier) @type]?
+		    property: (property_identifier) @type) (identifier) @type]?
+		  property: (property_identifier) @type) (identifier) @type]?
+		property: (property_identifier) @type) (identifier) @type]?
+	  property: (property_identifier) @type))
+
+(new_expression 
+  constructor: 
+    [(member_expression
+	  object: [(member_expression
+		object: [(member_expression
+		  object: [(member_expression
+		    object: [(member_expression
+		      object: [(member_expression
+		        object: [(member_expression
+		          object: [(member_expression
+		            object: [(member_expression
+		              object: [(member_expression
+			            property: (property_identifier) @type) (identifier) @type]?
+			          property: (property_identifier) @type) (identifier) @type]?
+			        property: (property_identifier) @type) (identifier) @type]?
+			      property: (property_identifier) @type) (identifier) @type]?
+			    property: (property_identifier) @type) (identifier) @type]?
+			  property: (property_identifier) @type) (identifier) @type]?
+		    property: (property_identifier) @type) (identifier) @type]?
+		  property: (property_identifier) @type) (identifier) @type]?
+		property: (property_identifier) @type) (identifier) @type]?
+	  property: (property_identifier) @type) (identifier) @type])
+
+
 ; Styling of the function access
 
 (function_access) @variable.member
@@ -75,6 +124,8 @@
  (#eq? @function.builtin "require"))
 
 (parameter_type) @type
+(return_type) @type
+(return_type (identifier) @type)
  
 (string (hash_expression) @markup.math)
 
