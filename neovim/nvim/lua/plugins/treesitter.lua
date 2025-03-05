@@ -55,7 +55,7 @@ return {
 				files = { "src/parser.c", "src/scanner.c" },
 				location = "cfscript",
 			},
-			filetype = "cfscript"
+			filetype = "cfscript",
 		}
 
 		configs.setup({
@@ -78,9 +78,10 @@ return {
 				"gitcommit",
 				"sql",
 			},
-			sync_install = false,
+			sync_install = true,
 			auto_install = true,
 			highlight = { enable = true },
+			incremental_selection = { enable = true },
 			indent = { enable = true },
 			textobjects = {
 				select = {
