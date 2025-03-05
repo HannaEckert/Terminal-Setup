@@ -17,6 +17,8 @@
 (cf_savecontent_tag) @module
 (cf_if_tag) @module
 (cf_loop) @module
+(cf_switch_tag) @module
+(cf_tag_open) @module
 (binary_expression) @string
 (unary_operator) @string
 (cf_var) @keyword
@@ -73,26 +75,23 @@
 ; Function and method definitions
 ;--------------------------------
 
-(cf_function 
-  (cf_tag_open 
-	(cf_attribute
-	  (cf_attribute_name) @_name (#eq? @_name "name")
+(cf_tag_open 
+  (cf_attribute
+    (cf_attribute_name) @_name (#eq? @_name "name")
 	  (quoted_cf_attribute_value 
-		(attribute_value) @keyword))))
+		(attribute_value) @keyword)))
 
-(cf_function 
-  (cf_tag_open 
-	(cf_attribute
-	  (cf_attribute_name) @_name (#eq? @_name "access")
+(cf_tag_open 
+  (cf_attribute
+    (cf_attribute_name) @_name (#eq? @_name "access")
 	  (quoted_cf_attribute_value 
-		(attribute_value) @string (#eq? @string "public")))))
+		(attribute_value) @string (#eq? @string "public"))))
 
-(cf_function 
-  (cf_tag_open 
-	(cf_attribute
-	  (cf_attribute_name) @_name (#eq? @_name "access")
+(cf_tag_open 
+  (cf_attribute
+    (cf_attribute_name) @_name (#eq? @_name "access")
 	  (quoted_cf_attribute_value 
-		(attribute_value) @constant (#eq? @constant "private")))))
+		(attribute_value) @constant (#eq? @constant "private"))))
 
 
 (quoted_cf_attribute_value 
