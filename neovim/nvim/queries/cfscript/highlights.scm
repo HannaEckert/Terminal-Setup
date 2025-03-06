@@ -49,6 +49,29 @@
 ; new expressions with constructor
 
 (formal_parameters 
+  _*
+    (member_expression
+	  object: [(member_expression
+		object: [(member_expression
+		  object: [(member_expression
+		    object: [(member_expression
+		      object: [(member_expression
+		        object: [(member_expression
+		          object: [(member_expression
+		            object: [(member_expression
+		              object: [(member_expression
+			            property: (property_identifier) @type) (identifier) @type]?
+			          property: (property_identifier) @type) (identifier) @type]?
+			        property: (property_identifier) @type) (identifier) @type]?
+			      property: (property_identifier) @type) (identifier) @type]?
+			    property: (property_identifier) @type) (identifier) @type]?
+			  property: (property_identifier) @type) (identifier) @type]?
+		    property: (property_identifier) @type) (identifier) @type]?
+		  property: (property_identifier) @type) (identifier) @type]?
+		property: (property_identifier) @type) (identifier) @type]?
+	  property: (property_identifier) @type))
+
+(formal_parameters 
     (member_expression
 	  object: [(member_expression
 		object: [(member_expression
@@ -93,6 +116,9 @@
 		property: (property_identifier) @type) (identifier) @type]?
 	  property: (property_identifier) @type) (identifier) @type])
 
+(ERROR 
+  (identifier)
+  (identifier) @type)
 
 ; Styling of the function access
 
