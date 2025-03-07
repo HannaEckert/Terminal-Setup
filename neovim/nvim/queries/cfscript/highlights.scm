@@ -168,7 +168,7 @@
   (undefined)
 ] @constant.builtin
 
-(comment) @comment
+(comment) @comment @spell
 
 [
   (string)

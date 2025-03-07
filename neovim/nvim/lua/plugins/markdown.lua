@@ -7,6 +7,7 @@ return {
 		"opdavies/toggle-checkbox.nvim",
 		config = function()
 			require("render-markdown").setup({
+				latex = { enabled = false },
 				heading = {
 					border = true,
 					border_virtual = false,
