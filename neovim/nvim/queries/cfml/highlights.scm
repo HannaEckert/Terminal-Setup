@@ -19,8 +19,8 @@
 (cf_loop) @module
 (cf_switch_tag) @module
 (cf_tag_open) @module
-(binary_expression) @string
-(unary_operator) @string
+(binary_expression) @character.special
+(unary_operator) @character.special
 (cf_var) @keyword
 
 ; Variables
@@ -304,7 +304,7 @@
   "&&="
   "||="
   "??="
-] @string
+] @character.special
 
 [
   "("

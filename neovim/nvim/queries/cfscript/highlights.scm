@@ -231,7 +231,7 @@
   "&&="
   "||="
   "??="
-] @operator
+] @character.special
 
 [
   "("
