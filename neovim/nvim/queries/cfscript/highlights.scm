@@ -284,7 +284,6 @@
   "throw"
   "try"
   "var"
-  "void"
   "while"
   "with"
   "yield"
