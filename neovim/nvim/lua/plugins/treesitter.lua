@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
+	ft = vim.g.coding_file_types,
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	build = ":TSUpdate",
 	config = function()
@@ -7,19 +8,6 @@ return {
 
 		---@class ParserInfo
 		local parserConfig = require("nvim-treesitter.parsers").get_parser_configs()
-
-		-- Add cfml and boxlang filetypes
-		vim.filetype.add({
-			extension = {
-				cfm = "cfml",
-				cfc = "cfscript",
-				cfs = "cfscript",
-				bxm = "boxlang",
-				bx = "boxlang",
-				bxs = "boxlang",
-				["code-snippets"] = "json",
-			},
-		})
 
 		-- Enable spell-checking within markdown files per default
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
@@ -68,6 +56,7 @@ return {
 				"markdown",
 				"xml",
 				"json",
+				"yaml",
 				"html",
 				"css",
 				"javascript",

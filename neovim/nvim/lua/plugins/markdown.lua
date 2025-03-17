@@ -1,10 +1,12 @@
 return {
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
+		ft = "markdown",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	},
 	{
 		"opdavies/toggle-checkbox.nvim",
+		ft = "markdown",
 		config = function()
 			require("render-markdown").setup({
 				latex = { enabled = false },

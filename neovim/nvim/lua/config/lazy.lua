@@ -10,14 +10,13 @@ require("lazy").setup({
 	spec = { { import = "plugins" } },
 	checker = {
 		enabled = true,
-		notify = false
+		notify = false,
 	},
 	change_detection = {
-		notify = false
+		notify = false,
 	},
 	ui = {
 		border = "rounded",
 		title = " Lazy - Plugins ",
 	},
 })
-

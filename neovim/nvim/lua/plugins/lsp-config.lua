@@ -4,6 +4,7 @@ return {
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 		},
+		ft = vim.g.coding_file_types,
 		config = function()
 			require("mason").setup({
 				ui = {
@@ -24,6 +25,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		ft = vim.g.coding_file_types,
 		events = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -64,14 +66,17 @@ return {
 	},
 	{
 		"hannaeckert/cfmlsp.nvim",
+		ft = { "cfml", "cfscript" },
 		dependencies = {
 			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
 		},
+
 		opts = {},
 	},
 	{
 		"hannaeckert/boxlsp.nvim",
+		ft = { "boxlang" },
 		dependencies = {
 			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",

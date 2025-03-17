@@ -7,6 +7,7 @@ return {
 	},
 	{
 		"windwp/nvim-autopairs",
+		ft = vim.g.coding_file_types,
 		event = { "InsertEnter" },
 		dependencies = {
 			"hrsh7th/nvim-cmp",

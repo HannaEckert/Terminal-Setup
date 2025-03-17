@@ -1,6 +1,7 @@
 return {
 	{
 		"L3MON4D3/LuaSnip",
+		ft = vim.g.coding_file_types,
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
@@ -8,6 +9,7 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		ft = vim.g.coding_file_types,
 		dependencies = {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-buffer" },

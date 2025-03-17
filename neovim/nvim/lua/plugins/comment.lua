@@ -1,5 +1,6 @@
 return {
 	"numToStr/Comment.nvim",
+	ft = vim.g.coding_file_types,
 	config = function()
 		-- Setup the correct comment string
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {

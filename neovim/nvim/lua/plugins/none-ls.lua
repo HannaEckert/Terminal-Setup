@@ -1,6 +1,7 @@
 return {
 	{
 		"nvimtools/none-ls.nvim",
+		ft = vim.g.coding_file_types,
 		dependencies = {
 			"nvimtools/none-ls-extras.nvim",
 		},
@@ -19,6 +20,7 @@ return {
 	},
 	{
 		"jay-babu/mason-null-ls.nvim",
+		ft = vim.g.coding_file_types,
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"williamboman/mason.nvim",
