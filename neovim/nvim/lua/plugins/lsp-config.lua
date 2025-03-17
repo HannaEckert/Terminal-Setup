@@ -63,7 +63,7 @@ return {
 			vim.keymap.set("n", "gl", vim.lsp.buf.list_workspace_folders)
 			vim.keymap.set("n", "gK", function() vim.lsp.buf.hover({ border = "rounded" }) end)
 			vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float({ border = "rounded" }) end)
-			vim.keymap.set({ "n", "i" }, "<C-k>", function() vim.lsp.buf.signature_help({ border = "rounded" }) end)
+			vim.keymap.set({ "n", "i" }, "gS", function() vim.lsp.buf.signature_help({ border = "rounded" }) end)
 
 			-- Quick actions
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format)
