@@ -1,7 +1,6 @@
 return {
 	{
 		"kdheepak/lazygit.nvim",
-		lazy = true,
 		cmd = {
 			"LazyGit",
 			"LazyGitConfig",
@@ -18,7 +17,7 @@ return {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		lazy = true,
+		ft = vim.g.coding_file_types,
 		config = function()
 			local gitsigns = require("gitsigns")
 			gitsigns.setup()
