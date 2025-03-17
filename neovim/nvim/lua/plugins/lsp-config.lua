@@ -34,7 +34,14 @@ return {
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.bashls.setup({ capabilities = capabilities })
 			lspconfig.cssls.setup({ capabilities = capabilities })
-			lspconfig.remark_ls.setup({ capabilities = capabilities })
+			lspconfig.remark_ls.setup({
+				capabilities = capabilities,
+				settings = {
+					remark = {
+						requireConfig = true
+					}
+				}
+			})
 			lspconfig.jdtls.setup({ capabilities = capabilities })
 
 			-- Jump to code	
