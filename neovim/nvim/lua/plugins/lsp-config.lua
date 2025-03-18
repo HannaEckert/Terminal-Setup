@@ -13,6 +13,8 @@ return {
 			})
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"arduino_language_server",
+					"clangd",
 					"lua_ls",
 					"bashls",
 					"cssls",
@@ -34,6 +36,7 @@ return {
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.bashls.setup({ capabilities = capabilities })
 			lspconfig.cssls.setup({ capabilities = capabilities })
+			lspconfig.arduino_language_server.setup({ capabilities = capabilities })
 			lspconfig.remark_ls.setup({
 				capabilities = capabilities,
 				settings = {
