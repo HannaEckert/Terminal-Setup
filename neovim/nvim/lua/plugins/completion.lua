@@ -15,7 +15,6 @@ return {
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-cmdline" },
-			{ "petertriho/cmp-git" },
 			{
 				"folke/lazydev.nvim",
 				ft = "lua",
@@ -62,20 +61,14 @@ return {
 				}),
 			})
 
-			cmp.setup.filetype("gitcommit", {
+			cmp.setup.cmdline({ "/", "?" }, {
+				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
-					{ name = "git" },
+					{ name = "nvim_lsp" },
+					{ name = "path" },
 				}, {
 					{ name = "buffer" },
 				}),
-			})
-			require("cmp_git").setup()
-
-			cmp.setup.cmdline({ "/", "?" }, {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
-					{ name = "buffer" },
-				},
 			})
 
 			cmp.setup.cmdline(":", {
