@@ -14,7 +14,6 @@ $currentDirectory/docker/install.sh && \
 $currentDirectory/eza/install.sh && \
 $currentDirectory/git/install.sh && \
 $currentDirectory/lazygit/install.sh && \
-$currentDirectory/lazydocker/install.sh && \
 $currentDirectory/tmux/install.sh && \
 $currentDirectory/neovim/install.sh && \
 $currentDirectory/jetBrainsMono/install.sh
@@ -25,18 +24,14 @@ $currentDirectory/jetBrainsMono/install.sh
 #################
 
 # Simple packages
-sudo apt install \
+yay -S --needed --noconfirm \
 	curl \
-	fd-find \
+	extra/fd \
 	ripgrep \
-	zsh-autosuggestions \ 
-	thefuck # Typo fixer
+	zsh-autosuggestions \
+	zoxide \
+	fzf \
+	lazydocker \
+	extra/jre21-openjdk-headless
 	
-# Zoxide
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
-
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
 exit 0

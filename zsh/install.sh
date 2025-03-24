@@ -3,7 +3,7 @@
 currentDirectory=$(cd $(dirname "$0") >/dev/null 2>&1; pwd -P)
 
 echo "Installing zsh"
-sudo apt install zsh
+yay -S --needed --noconfirm zsh
 
 echo "Setting the .zshrc symlink"
 mkdir -p ~/.config

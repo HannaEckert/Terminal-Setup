@@ -3,7 +3,7 @@
 currentDirectory=$(cd $(dirname "$0") >/dev/null 2>&1; pwd -P)
 
 echo "Installing tmux"
-sudo apt install tmux
+yay -S --needed --noconfirm tmux
 
 echo "Setting the symlink"
 mkdir -p ~/.config/tmux/plugins/tpm

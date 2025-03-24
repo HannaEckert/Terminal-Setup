@@ -3,7 +3,7 @@
 currentDirectory=$(cd $(dirname "$0") >/dev/null 2>&1; pwd -P)
 
 echo "Installing Starship"
-curl -sS https://starship.rs/install.sh | sh
+yay -S --needed --noconfirm starship
 
 echo "Setting the config symlink"
 mkdir -p ~/.config

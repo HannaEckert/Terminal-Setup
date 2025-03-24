@@ -3,13 +3,13 @@
 currentDirectory=$(cd $(dirname "$0") >/dev/null 2>&1; pwd -P)
 
 echo "Installing bat"
-sudo apt install bat
+yay -S --needed --noconfirm bat
 
 echo "Installing the Catppuccin Frappe theme"
-mkdir -p "$(batcat --config-dir)/themes"
-cp "$currentDirectory/Catppuccin\ Frappe.tmTheme" $(batcat --config-dir)/themes
+mkdir -p "$(bat --config-dir)/themes"
+cp "$currentDirectory/Catppuccin Frappe.tmTheme" $(bat --config-dir)/themes
 
-batcat cache --build
+bat cache --build
 
 echo "Making a symlink to the config file"
 ln -sf $currentDirectory/config ~/.config/bat/
