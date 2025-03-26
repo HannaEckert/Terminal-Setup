@@ -92,18 +92,12 @@ return {
 			local ls = require("luasnip")
 
 			-- Jump cursor forward
-			vim.keymap.set({ "i", "s" }, "<leader>cl", function()
-				ls.jump(1)
-			end, { silent = true })
-			vim.keymap.set({ "i", "s" }, "<leader>cj", function()
+			vim.keymap.set({ "i", "s" }, "<C-n>", function()
 				ls.jump(1)
 			end, { silent = true })
 
 			-- Jump cursor back
-			vim.keymap.set({ "i", "s" }, "<leader>ch", function()
-				ls.jump(-1)
-			end, { silent = true })
-			vim.keymap.set({ "i", "s" }, "<leader>ck", function()
+			vim.keymap.set({ "i", "s" }, "<C-p>", function()
 				ls.jump(-1)
 			end, { silent = true })
 		end,
