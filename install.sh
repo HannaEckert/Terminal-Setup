@@ -7,7 +7,6 @@ currentDirectory=$(cd $(dirname "$0") >/dev/null 2>&1; pwd -P)
 ##################
 
 $currentDirectory/zsh/install.sh && \
-$currentDirectory/java/install.sh && \
 $currentDirectory/starship/install.sh && \
 $currentDirectory/bat/install.sh && \
 $currentDirectory/docker/install.sh && \
