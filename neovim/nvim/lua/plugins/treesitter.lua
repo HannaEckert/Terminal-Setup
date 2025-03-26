@@ -51,6 +51,7 @@ return {
 			ignore_install = {},
 			ensure_installed = {
 				"query",
+				"regex",
 				"arduino",
 				"lua",
 				"bash",
