@@ -14,7 +14,6 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"arduino_language_server",
-					"clangd",
 					"lua_ls",
 					"bashls",
 					"cssls",
