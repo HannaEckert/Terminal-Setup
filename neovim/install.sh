@@ -10,6 +10,7 @@ yay -S --needed --noconfirm \
 	npm \
 	bc \
 	wget \
+	jdk-openjdk \
 	openbsd-netcat
 
 mkdir -p ~/.config

@@ -30,7 +30,6 @@ yay -S --needed --noconfirm \
 	zoxide \
 	fzf \
 	lazydocker \
-	extra/jre21-openjdk-headless
 	ttf-jetbrains-mono-nerd
 	
 exit 0
