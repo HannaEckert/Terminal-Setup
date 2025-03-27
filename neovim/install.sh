@@ -7,7 +7,10 @@ yay -S --needed --noconfirm \
 	neovim \
 	golang-go \
 	nodejs \
-	npm
+	npm \
+	bc \
+	wget \
+	openbsd-netcat
 
 mkdir -p ~/.config
 ln -sf $currentDirectory/nvim ~/.config/
