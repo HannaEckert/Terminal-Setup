@@ -14,8 +14,7 @@ $currentDirectory/eza/install.sh && \
 $currentDirectory/git/install.sh && \
 $currentDirectory/lazygit/install.sh && \
 $currentDirectory/tmux/install.sh && \
-$currentDirectory/neovim/install.sh && \
-$currentDirectory/jetBrainsMono/install.sh
+$currentDirectory/neovim/install.sh 
 
 
 #################
@@ -32,5 +31,6 @@ yay -S --needed --noconfirm \
 	fzf \
 	lazydocker \
 	extra/jre21-openjdk-headless
+	ttf-jetbrains-mono-nerd
 	
 exit 0
