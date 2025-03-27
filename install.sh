@@ -30,6 +30,9 @@ yay -S --needed --noconfirm \
 	zoxide \
 	fzf \
 	lazydocker \
+	less \
+	mandoc \
+	cht.sh-git \
 	ttf-jetbrains-mono-nerd
 	
 exit 0
