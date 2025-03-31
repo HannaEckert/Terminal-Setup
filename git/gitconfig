@@ -4,7 +4,10 @@
 [core]
 	autocrlf = input
 	eol = lf
-	editor = /snap/bin/nvim
+	editor = /usr/bin/nvim
+
+[push]
+	autoSetupRemote = true
 
 [merge]
 	tool = nvimdiff
