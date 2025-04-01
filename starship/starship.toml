@@ -2,11 +2,21 @@ format = """$directory$character"""
 right_format = """$all"""
 palette = "catppuccin_frappe"
 add_newline = false
+command_timeout = 2000
 
 [hostname]
 disabled = true
 
 [username]
+disabled = true
+
+[aws]
+disabled = true
+
+[pijul_channel]
+disabled = true
+
+[docker_context]
 disabled = true
 
 [git_branch]
