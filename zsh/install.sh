@@ -3,7 +3,7 @@
 currentDirectory=$(cd $(dirname "$0") >/dev/null 2>&1; pwd -P)
 
 echo "Installing zsh"
-yay -S --needed --noconfirm zsh
+yay -S --needed --noconfirm zsh inotify-tools
 
 echo "Setting the .zshrc symlink"
 mkdir -p ~/.config
