@@ -15,5 +15,5 @@ vim.g.coding_file_types = {
 	"javascript", "css", "html", "xml", "cfml",
 	"cfscript", "boxlang", "json", "markdown", "sql",
 	"lua", "zsh", "sh", "cpp", "c", "dockerfile",
-	"gitcommit", "java"
+	"gitcommit", "java", "arduino"
 }
