@@ -28,6 +28,16 @@ return {
 			end,
 		})
 
+		vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+			pattern = "*.ino",
+			callback = function()
+				vim.o.tabstop = 4
+				vim.o.shiftwidth = 4
+				vim.o.expandtab = false
+				vim.o.smartindent = true
+			end,
+		})
+
 		parserConfig.cfml = {
 			install_info = {
 				url = "https://github.com/cfmleditor/tree-sitter-cfml",
@@ -53,6 +63,7 @@ return {
 				"query",
 				"regex",
 				"arduino",
+				"cpp",
 				"lua",
 				"bash",
 				"markdown",
