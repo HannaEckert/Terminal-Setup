@@ -7,18 +7,18 @@ return {
 		ft = vim.g.coding_file_types,
 		config = function()
 			require("mason").setup({
-				ui = {
-					border = "rounded"
-				},
+				ui = { border = "rounded" },
 			})
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"arduino_language_server",
 					"lua_ls",
+					"ts_ls",
+					"eslint",
 					"bashls",
 					"cssls",
-					"remark_ls", -- markdown lsp
-					"jdtls", -- java lsp
+					"sqls",
+					"jdtls",
 				},
 				automatic_installation = true,
 			})
@@ -32,20 +32,29 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.bashls.setup({ capabilities = capabilities })
-			lspconfig.cssls.setup({ capabilities = capabilities })
-			lspconfig.clangd.setup({ capabilities = capabilities })
 			lspconfig.arduino_language_server.setup({ capabilities = capabilities })
-			lspconfig.remark_ls.setup({
+			lspconfig.lua_ls.setup({ capabilities = capabilities })
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
+				on_attach = function(client)
+					client.server_capabilities.documentFormattingProvider = false
+				end,
+			})
+			lspconfig.eslint.setup({
+				capabilities = capabilities,
+				on_attach = function(client)
+					client.server_capabilities.documentFormattingProvider = true
+				end,
 				settings = {
-					remark = {
-						requireConfig = true
-					}
+					format = true,
+					packageManager = "npm"
 				}
 			})
+			lspconfig.bashls.setup({ capabilities = capabilities })
+			lspconfig.cssls.setup({ capabilities = capabilities })
+			lspconfig.sqls.setup({ capabilities = capabilities })
 			lspconfig.jdtls.setup({ capabilities = capabilities })
+			lspconfig.clangd.setup({ capabilities = capabilities })
 
 			-- Jump to code	
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition)
