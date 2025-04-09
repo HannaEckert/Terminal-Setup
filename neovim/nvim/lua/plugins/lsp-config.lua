@@ -32,7 +32,7 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			lspconfig.arduino_language_server.setup({ capabilities = capabilities, handlers = handlers })
+			lspconfig.arduino_language_server.setup({ capabilities = capabilities })
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
@@ -54,9 +54,12 @@ return {
 			lspconfig.cssls.setup({ capabilities = capabilities })
 			lspconfig.sqls.setup({ capabilities = capabilities })
 			lspconfig.jdtls.setup({ capabilities = capabilities })
-			lspconfig.clangd.setup({ capabilities = capabilities })
+			lspconfig.clangd.setup({
+				cmd = { "clangd", "--enable-config" },
+				capabilities = capabilities,
+			})
 
-			-- Jump to code	
+			-- Jump to code
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
 			vim.keymap.set("n", "gr", vim.lsp.buf.references)
@@ -75,7 +78,7 @@ return {
 			vim.keymap.set("n", "gl", vim.lsp.buf.list_workspace_folders)
 			vim.keymap.set("n", "gk", vim.lsp.buf.hover)
  			vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float({ border = "rounded" }) end)
-			vim.keymap.set({ "n", "i" }, "gS", vim.lsp.buf.signature_help)
+			vim.keymap.set("n", "gS", vim.lsp.buf.signature_help)
 
 			-- Quick actions
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format)
