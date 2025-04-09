@@ -22,6 +22,8 @@ return {
 			local gitsigns = require("gitsigns")
 			gitsigns.setup()
 
+			vim.g.lazygit_floating_window_scaling_factor = 1
+
 			-- Navigation
 			vim.keymap.set("n", "]c", function()
 				if vim.wo.diff then
