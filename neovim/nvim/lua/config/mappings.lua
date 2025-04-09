@@ -2,24 +2,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Escape input mode with 'jj'
-vim.keymap.set("i", "jj", "<ESC>", { silent = true })
-
 -- Easy creation of panes
 vim.keymap.set({ "n", "v" }, "<leader>ws", ":vsplit<CR>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>wv", ":split<CR>", { silent = true })
-
--- Yank into system register
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { silent = true })
-
--- Delete and paste without yank
-vim.keymap.set({ "n", "v" }, "<leader>p", '"_p', { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { silent = true })
-
--- Easy close file or editor
-vim.keymap.set({ "n", "v" }, "<leader>q", "<cmd>:q<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>Q", "<cmd>:qa<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<leader>x", "<cmd>:bp<CR><cmd>:bd #<CR>", { silent = true })
 
 -- Disable the find highlight
 vim.keymap.set({ "n", "v" }, "<leader><leader>", ":nohl<CR>", { silent = true })
