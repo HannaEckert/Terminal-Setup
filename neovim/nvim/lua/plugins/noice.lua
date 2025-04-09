@@ -19,7 +19,7 @@ return {
 				bottom_search = true,
 				command_palette = true,
 				inc_rename = false,
-				lsp_doc_border = false,
+				lsp_doc_border = true,
 			},
 			routes = {
 				{

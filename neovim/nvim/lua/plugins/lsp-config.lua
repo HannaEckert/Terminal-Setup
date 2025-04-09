@@ -32,7 +32,7 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
-			lspconfig.arduino_language_server.setup({ capabilities = capabilities })
+			lspconfig.arduino_language_server.setup({ capabilities = capabilities, handlers = handlers })
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
@@ -73,14 +73,14 @@ return {
 
 			-- Show info
 			vim.keymap.set("n", "gl", vim.lsp.buf.list_workspace_folders)
-			vim.keymap.set("n", "gk", function() vim.lsp.buf.hover({ border = "rounded" }) end)
-			vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float({ border = "rounded" }) end)
-			vim.keymap.set({ "n", "i" }, "gS", function() vim.lsp.buf.signature_help({ border = "rounded" }) end)
+			vim.keymap.set("n", "gk", vim.lsp.buf.hover)
+ 			vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float({ border = "rounded" }) end)
+			vim.keymap.set({ "n", "i" }, "gS", vim.lsp.buf.signature_help)
 
 			-- Quick actions
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format)
 			vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
-			vim.keymap.set("n", "<leader>.", function() vim.lsp.buf.code_action({ border = "rounded" }) end)
+			vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action)
 		end,
 	},
 	{
