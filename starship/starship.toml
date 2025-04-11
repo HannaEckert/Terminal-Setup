@@ -5,7 +5,8 @@ add_newline = false
 command_timeout = 2000
 
 [hostname]
-disabled = true
+ssh_only = true
+format = "[󰌘 $hostname](bold red) "
 
 [username]
 disabled = true
