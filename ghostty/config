@@ -1,0 +1,9 @@
+gtk-single-instance=true
+theme=catppuccin-frappe.conf
+font-size=10
+adjust-cell-height=15%
+confirm-close-surface=false
+quit-after-last-window-closed=true
+gtk-titlebar-hide-when-maximized=true
+window-theme=ghostty
+adw-toolbar-style=flat
