@@ -2,7 +2,7 @@
 
 currentDirectory=$(cd $(dirname "$0") >/dev/null 2>&1; pwd -P)
 
-echo "Installing eza"
+echo "Installing btop"
 yay -S --needed --noconfirm btop
 
 mkdir -p ~/.config/btop/themes

@@ -11,6 +11,7 @@ $currentDirectory/starship/install.sh && \
 $currentDirectory/bat/install.sh && \
 $currentDirectory/docker/install.sh && \
 $currentDirectory/eza/install.sh && \
+$currentDirectory/btop/install.sh && \
 $currentDirectory/git/install.sh && \
 $currentDirectory/lazygit/install.sh && \
 $currentDirectory/tmux/install.sh && \
