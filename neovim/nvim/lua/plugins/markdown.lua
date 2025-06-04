@@ -21,6 +21,27 @@ return {
 					below =   "",
 					backgrounds = {},
 				},
+				bullet = { icons = { '', '', '', '', '', '', '' } },
+				checkbox = {
+					unchecked = {
+						icon = '󰄰 ',
+						highlight = 'RenderMarkdownBullet'
+					},
+					checked = { icon = '󰄴 ' },
+					custom = {
+						todo = { rendered = ' ' },
+						question = {
+							raw = '[?]',
+							rendered = ' ',
+							highlight = '@string.regexp',
+						},
+						answer = {
+							raw = '[!]',
+							rendered = '󱩏 ',
+							highlight = '@string',
+						},
+					},
+				},
 			})
 
 			vim.keymap.set("n", "<leader>t", ":lua require('toggle-checkbox').toggle()<CR>", { silent = true })
