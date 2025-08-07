@@ -29,7 +29,11 @@ return {
 					},
 					checked = { icon = '󰄴 ' },
 					custom = {
-						todo = { rendered = ' ' },
+						todo = { 
+							raw = '[-]',
+							rendered = ' ',
+							highlight = '@label',
+						},
 						question = {
 							raw = '[?]',
 							rendered = ' ',
