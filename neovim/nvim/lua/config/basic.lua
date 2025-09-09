@@ -31,7 +31,8 @@ vim.o.cursorline = false
 vim.o.termguicolors = true
 vim.o.updatetime = 50
 vim.o.laststatus = 3
-vim.o.fileformats = "dos,unix,mac"
+vim.o.fileformats = "unix,dos,mac"
+vim.o.fileformat = "unix"
 vim.o.fixendofline = false
 
 -- Code Folding
