@@ -39,6 +39,11 @@ return {
 							rendered = ' ',
 							highlight = '@string.regexp',
 						},
+						movedQuestion = {
+							raw = '[>]',
+							rendered = ' ',
+							highlight = '@function',
+						},
 						answer = {
 							raw = '[!]',
 							rendered = '󱩏 ',
