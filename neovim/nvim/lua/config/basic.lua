@@ -50,15 +50,20 @@ if vim.fn.has("wsl") == 1 then
 	vim.g.clipboard = {
 		name = 'WslClipboard',
 		copy = {
-			['+'] = 'clip.exe',
-			['*'] = 'clip.exe',
+			['+'] = '/mnt/c/Windows/System32/clip.exe',
+			['*'] = '/mnt/c/Windows/System32/clip.exe',
 		},
 		paste = {
-			['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-			['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			['+'] = '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			['*'] = '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
 		},
 		cache_enabled = 0,
 	}
+
+	vim.keymap.set("n", "gx", function()
+	  local url = vim.fn.expand("<cfile>")
+	  vim.system({ "/mnt/c/Program Files/Mozilla Firefox/firefox.exe", url }, { detach = true })
+	end, { silent = true })
 end
 
 -- Yank Highlighting
