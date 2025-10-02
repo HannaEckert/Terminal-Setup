@@ -6,8 +6,15 @@ return {
 	priority = 1000,
 	config = function()
 		require("catppuccin").setup({
+			flavour = 'frappe',
 			transparent_background = true,
+			float = {
+				transparent = true,
+				solid = false,
+			},
 			integrations = {
+				cmp = true,
+				gtisigns = true,
 				harpoon = true,
 				headlines = true,
 				noice = true,
