@@ -17,11 +17,12 @@ return {
 
 			vim.keymap.set({ "n", "v" }, "<leader>fb", builtin.buffers)
 			vim.keymap.set({ "n", "v" }, "<leader>fh", builtin.help_tags)
-			vim.keymap.set({ "n", "v" }, "<leader>fl", builtin.resume)
+			vim.keymap.set({ "n", "v" }, "<leader>fr", builtin.resume)
 			vim.keymap.set({ "n", "v" }, "<leader>fm", builtin.keymaps)
 			vim.keymap.set({ "n", "v" }, "<leader>fc", builtin.git_status)
 			vim.keymap.set({ "n", "v" }, "<leader>fp", builtin.registers)
 			vim.keymap.set({ "n", "v" }, "<leader>fs", builtin.symbols)
+			vim.keymap.set({ "n", "v" }, "<leader>fl", builtin.pickers)
 		end,
 	},
 	{
@@ -53,6 +54,9 @@ return {
 							return true
 						end,
 					},
+					cache_picker = {
+						num_pickers = -1,
+					}
 				},
 			})
 
