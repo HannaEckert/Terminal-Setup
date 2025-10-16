@@ -29,34 +29,45 @@ return {
 		ft = vim.g.coding_file_types,
 		events = { "BufReadPre", "BufNewFile" },
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
+			-- Add Mason bin to PATH
+			vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
-			lspconfig.arduino_language_server.setup({ capabilities = capabilities })
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-				on_attach = function(client)
+			vim.lsp.config["*"] = {
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			}
+
+			-- per server overrides
+			vim.lsp.config("ts_ls", {
+				on_attach = function(client, bufnr)
 					client.server_capabilities.documentFormattingProvider = false
 				end,
 			})
-			lspconfig.eslint.setup({
-				capabilities = capabilities,
-				on_attach = function(client)
+
+			vim.lsp.config("eslint", {
+				on_attach = function(client, bufnr)
 					client.server_capabilities.documentFormattingProvider = true
 				end,
 				settings = {
 					format = true,
-					packageManager = "npm"
-				}
+					packageManager = "npm",
+				},
 			})
-			lspconfig.bashls.setup({ capabilities = capabilities })
-			lspconfig.cssls.setup({ capabilities = capabilities })
-			lspconfig.sqls.setup({ capabilities = capabilities })
-			lspconfig.jdtls.setup({ capabilities = capabilities })
-			lspconfig.clangd.setup({
+
+			vim.lsp.config("clangd", {
 				cmd = { "clangd", "--enable-config" },
-				capabilities = capabilities,
+			})
+
+			-- enable all
+			vim.lsp.enable({
+				"arduino_language_server",
+				"lua_ls",
+				"ts_ls",
+				"eslint",
+				"bashls",
+				"cssls",
+				"sqls",
+				"jdtls",
+				"clangd",
 			})
 
 			-- Jump to code
@@ -77,7 +88,7 @@ return {
 			-- Show info
 			vim.keymap.set("n", "gl", vim.lsp.buf.list_workspace_folders)
 			vim.keymap.set("n", "gk", vim.lsp.buf.hover)
- 			vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float({ border = "rounded" }) end)
+			vim.keymap.set("n", "<leader>K", function() vim.diagnostic.open_float({ border = "rounded" }) end)
 			vim.keymap.set("n", "gS", vim.lsp.buf.signature_help)
 
 			-- Quick actions
