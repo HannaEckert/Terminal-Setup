@@ -4,21 +4,21 @@
 (attribute_name) @attribute
 (attribute_value) @operator
 (raw_text) @embedded
-(start_tag) @module
-(end_tag) @module
-(self_closing_tag) @module
-(cf_selfclose_tag) @module
-(cf_selfclose_tag_end) @module
-(cf_output_tag) @module
-(cf_return) @module
-(cf_query) @module
-(cf_set_tag) @module
-(cf_transaction_tag) @module
-(cf_savecontent_tag) @module
-(cf_if_tag) @module
-(cf_loop) @module
-(cf_switch_tag) @module
-(cf_tag_open) @module
+(start_tag) @punctuation.delimiter
+(end_tag) @punctuation.delimiter
+(self_closing_tag) @punctuation.delimiter
+(cf_selfclose_tag) @punctuation.delimiter
+(cf_selfclose_tag_end) @punctuation.delimiter
+(cf_output_tag) @punctuation.delimiter
+(cf_return) @punctuation.delimiter
+(cf_query) @punctuation.delimiter
+(cf_set_tag) @punctuation.delimiter
+(cf_transaction_tag) @punctuation.delimiter
+(cf_savecontent_tag) @punctuation.delimiter
+(cf_if_tag) @punctuation.delimiter
+(cf_loop) @punctuation.delimiter
+(cf_switch_tag) @punctuation.delimiter
+(cf_tag_open) @punctuation.delimiter
 (binary_expression) @character.special
 (unary_operator) @character.special
 (cf_var) @keyword
@@ -115,11 +115,11 @@
 	  (quoted_cf_attribute_value 
 		(attribute_value) @type))))
 
-(cf_component (cf_tag_open) @module)
-(cf_component (cf_tag_close) @module)
+(cf_component (cf_tag_open) @punctuation.delimiter)
+(cf_component (cf_tag_close) @punctuation.delimiter)
 
-(cf_function (cf_tag_open) @module)
-(cf_function (cf_tag_close) @module)
+(cf_function (cf_tag_open) @punctuation.delimiter)
+(cf_function (cf_tag_close) @punctuation.delimiter)
 
 
 (function_expression
@@ -230,7 +230,7 @@
 (regex_flags) @character.special
 
 (regex
-  "/" @module) ; Regex delimiters
+  "/" @punctuation.delimiter) ; Regex delimiters
 
 (number) @number
 
@@ -256,7 +256,7 @@
 
 [
   ">"
-] @module
+] @punctuation.delimiter
 
 [
   "-"
@@ -275,7 +275,6 @@
   "%="
   "<"
   "<="
-  "<<"
   "="
   "=="
   "==="
@@ -285,9 +284,7 @@
   "=>"
   ">"
   ">="
-  ">>"
   ">>="
-  ">>>"
   ">>>="
   "~"
   "^"
