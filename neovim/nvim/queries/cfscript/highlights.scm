@@ -1,3 +1,112 @@
+; Tokens
+;-------
+
+[
+  ";"
+  (optional_chain)
+  "."
+  ","
+] @punctuation.delimiter
+
+[
+  "-"
+  "--"
+  "-="
+  "+"
+  "++"
+  "+="
+  "*"
+  "*="
+  "**"
+  "**="
+  "/"
+  "/="
+  "%"
+  "%="
+  "<"
+  "<="
+  "<<"
+  "<<="
+  "="
+  "=="
+  "==="
+  "!="
+  "!=="
+  "=>"
+  ">"
+  ">="
+  ">>"
+  ">>="
+  ">>>"
+  ">>>="
+  "^"
+  "&"
+  "|"
+  "^="
+  "&="
+  "|="
+  "&&"
+  "||"
+  "??"
+  "&&="
+  "||="
+  "??="
+] @character.special
+
+[
+  "("
+  ")"
+  "["
+  "]"
+  "{"
+  "}"
+]  @punctuation.bracket
+
+(template_substitution
+  "${" @punctuation.special
+  "}" @punctuation.special) @embedded
+
+[
+ "required"
+] @character.special
+
+[
+  "as"
+  "break"
+  "case"
+  "catch"
+  "const"
+  "continue"
+  "debugger"
+  "default"
+  "do"
+  "else"
+  "export"
+  "finally"
+  "for"
+  "from"
+  "function"
+  "get"
+  "if"
+  "import"
+  "in"
+  "instanceof"
+  "let"
+  "new"
+  "of"
+  "return"
+  "set"
+  "static"
+  "switch"
+  "target"
+  "throw"
+  "try"
+  "var"
+  "while"
+  "with"
+  "yield"
+] @keyword
+
 ; Variables
 ;----------
 
@@ -116,9 +225,50 @@
 		property: (property_identifier) @type) (identifier) @type]?
 	  property: (property_identifier) @type) (identifier) @type])
 
-(ERROR 
-  (identifier)
-  (identifier) @type)
+; Styling of the properties
+(component_body
+  (expression_statement
+	(identifier)
+  	(ERROR
+	  (identifier) @variable )))
+
+(component_body
+  (expression_statement
+	(identifier) @punctuation.delimiter
+  	(ERROR
+	  (identifier) @punctuation.delimiter (#eq? @punctuation.delimiter "property") )))
+
+(component_body
+  (expression_statement
+	(identifier)
+  	(ERROR
+	  (identifier) @type (#match? @type "^(string|numeric|struct|array|date|boolean|query|xml)$") )))
+
+(component_body
+  (expression_statement
+	(identifier)
+  	(ERROR
+		(member_expression
+		  object: [(member_expression
+			object: [(member_expression
+			  object: [(member_expression
+				object: [(member_expression
+				  object: [(member_expression
+					object: [(member_expression
+					  object: [(member_expression
+						object: [(member_expression
+						  object: [(member_expression
+							property: (property_identifier) @type) (identifier) @type]?
+						  property: (property_identifier) @type) (identifier) @type]?
+						property: (property_identifier) @type) (identifier) @type]?
+					  property: (property_identifier) @type) (identifier) @type]?
+					property: (property_identifier) @type) (identifier) @type]?
+				  property: (property_identifier) @type) (identifier) @type]?
+				property: (property_identifier) @type) (identifier) @type]?
+			  property: (property_identifier) @type) (identifier) @type]?
+			property: (property_identifier) @type) (identifier) @type]?
+		  property: (property_identifier) @type))
+	  ))
 
 ; Styling of the function access
 
@@ -177,112 +327,3 @@
 
 (regex) @string.special
 (number) @number
-
-; Tokens
-;-------
-
-[
-  ";"
-  (optional_chain)
-  "."
-  ","
-] @punctuation.delimiter
-
-[
-  "-"
-  "--"
-  "-="
-  "+"
-  "++"
-  "+="
-  "*"
-  "*="
-  "**"
-  "**="
-  "/"
-  "/="
-  "%"
-  "%="
-  "<"
-  "<="
-  "<<"
-  "<<="
-  "="
-  "=="
-  "==="
-  "!="
-  "!=="
-  "=>"
-  ">"
-  ">="
-  ">>"
-  ">>="
-  ">>>"
-  ">>>="
-  "^"
-  "&"
-  "|"
-  "^="
-  "&="
-  "|="
-  "&&"
-  "||"
-  "??"
-  "&&="
-  "||="
-  "??="
-] @character.special
-
-[
-  "("
-  ")"
-  "["
-  "]"
-  "{"
-  "}"
-]  @punctuation.bracket
-
-(template_substitution
-  "${" @punctuation.special
-  "}" @punctuation.special) @embedded
-
-[
- "required"
-] @character.special
-
-[
-  "as"
-  "break"
-  "case"
-  "catch"
-  "const"
-  "continue"
-  "debugger"
-  "default"
-  "do"
-  "else"
-  "export"
-  "finally"
-  "for"
-  "from"
-  "function"
-  "get"
-  "if"
-  "import"
-  "in"
-  "instanceof"
-  "let"
-  "new"
-  "of"
-  "return"
-  "set"
-  "static"
-  "switch"
-  "target"
-  "throw"
-  "try"
-  "var"
-  "while"
-  "with"
-  "yield"
-] @keyword
