@@ -10,6 +10,10 @@ return {
 				["<esc>"] = "actions.close",
 				["q"] = "actions.close",
 			},
+			float = {
+				border = "rounded",
+				padding = 20,
+			},
 		})
 	end,
 }
