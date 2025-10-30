@@ -20,7 +20,11 @@ return {
 		ft = vim.g.coding_file_types,
 		config = function()
 			local gitsigns = require("gitsigns")
-			gitsigns.setup()
+			gitsigns.setup({
+				preview_config = {
+					border = "rounded",
+				}
+			})
 
 			vim.g.lazygit_floating_window_scaling_factor = 1
 
